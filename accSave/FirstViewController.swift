@@ -136,13 +136,15 @@ class FirstViewController: UIViewController,CLLocationManagerDelegate {
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         guard let locValue: CLLocationCoordinate2D = manager.location?.coordinate else { return }
+        let speedValue: CLLocationSpeed = manager.location!.speed
         let latitude = String(locValue.latitude)
+        let speed = String(speedValue)
+        
         let formatter = DateFormatter()
         formatter.dateFormat = "yyyyMMddhhmmss"//formats the time into the format we want
         let dateTime = formatter.string(from: Date())//saves the current time from Date()
         let longitude = String(locValue.longitude)
-        let titleString = "timestamp \t system_time \t lat \t lon \t speed \t bearing \t provider"
-        let newLine = dateTime + " \t " + formatter.string(from: Date()) + " \t " + latitude + " \t " + longitude + " \n"
+        let newLine = dateTime + " \t " + formatter.string(from: Date()) + " \t " + latitude + " \t " + longitude + " \t " + speed +  " \n"
         self.write(newLine,to: "/gps.txt" , folderDestination)
         saveTextTest.text = latitude
         longLabel.text = longitude
