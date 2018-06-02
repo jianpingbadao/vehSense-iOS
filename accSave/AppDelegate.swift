@@ -1,9 +1,9 @@
 //
 //  AppDelegate.swift
-//  vehsense
+//  accSave
 //
-//  Created by Weida Zhong on 5/27/18.
-//  Copyright © 2018 Weida Zhong. All rights reserved.
+//  Created by Jalil Sarwari on 5/29/18.
+//  Copyright © 2018 Jalil Sarwari. All rights reserved.
 //
 
 import UIKit

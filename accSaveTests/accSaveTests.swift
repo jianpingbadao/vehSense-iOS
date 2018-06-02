@@ -1,15 +1,15 @@
 //
-//  vehsenseTests.swift
-//  vehsenseTests
+//  accSaveTests.swift
+//  accSaveTests
 //
-//  Created by Weida Zhong on 5/27/18.
-//  Copyright © 2018 Weida Zhong. All rights reserved.
+//  Created by Jalil Sarwari on 5/29/18.
+//  Copyright © 2018 Jalil Sarwari. All rights reserved.
 //
 
 import XCTest
-@testable import vehsense
+@testable import accSave
 
-class vehsenseTests: XCTestCase {
+class accSaveTests: XCTestCase {
     
     override func setUp() {
         super.setUp()
