@@ -61,30 +61,6 @@ class FirstViewController: UIViewController,CLLocationManagerDelegate {
             self.createNewDirectory()
             isCurrentlyRunning = true
         }
-        
-        let file = "file.txt" //this is the file. we will write to and read from it
-        
-        let text = "some text \n" //just a text
-        let text2 = "Jalil"
-        if let dir = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first {
-            
-            let fileURL = dir.appendingPathComponent(file)
-            
-            //writing
-            do {
-                try text.write(to: fileURL, atomically: false, encoding: .utf8)
-                
-            }
-            catch {/* error handling here */}
-            
-            //reading
-            do {
-                _ = try String(contentsOf: fileURL, encoding: .utf8)
-            }
-            catch {/* error handling here */}
-        }
-        
-        
     }
     
     
@@ -108,14 +84,26 @@ class FirstViewController: UIViewController,CLLocationManagerDelegate {
         }
         catch {}
         
-        
-        //self.write(String(i),to: "gps" , folderDestination)
+        guard let writePath = NSURL(fileURLWithPath: rootFolder).appendingPathComponent(folderDestination) else { return }
+        let file = writePath.appendingPathComponent("gps.txt")
+        let titleString = "timestamp \t system_time \t  \t lat \t \t  lon \t \t speed \t bearing \t provider"
+        do {
+            try "\(titleString)\n".write(to: file, atomically: true, encoding: String.Encoding.utf8)
+        } catch {
+            print(error)
+        }
         
     }
     func write(_ text: String,to fileNamed: String,_ folder: String = "SavedFiles") {
         guard let writePath = NSURL(fileURLWithPath: rootFolder).appendingPathComponent(folder) else { return }
         let file = writePath.appendingPathComponent(fileNamed)
-        try? text.write(to: file, atomically: false, encoding: String.Encoding.utf8)
+        do {
+            let fileHandle = try FileHandle(forWritingTo: file)
+            fileHandle.seekToEndOfFile()
+            fileHandle.write(text.data(using: .utf8)!)
+            fileHandle.closeFile()
+        } catch {}
+        
     }
     
     
@@ -149,12 +137,16 @@ class FirstViewController: UIViewController,CLLocationManagerDelegate {
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         guard let locValue: CLLocationCoordinate2D = manager.location?.coordinate else { return }
         let latitude = String(locValue.latitude)
+        let formatter = DateFormatter()
+        formatter.dateFormat = "yyyyMMddhhmmss"//formats the time into the format we want
+        let dateTime = formatter.string(from: Date())//saves the current time from Date()
         let longitude = String(locValue.longitude)
+        let titleString = "timestamp \t system_time \t lat \t lon \t speed \t bearing \t provider"
+        let newLine = dateTime + " \t " + formatter.string(from: Date()) + " \t " + latitude + " \t " + longitude + " \n"
+        self.write(newLine,to: "/gps.txt" , folderDestination)
         saveTextTest.text = latitude
         longLabel.text = longitude
-        self.write(latitude + " \n",to: "/gps.txt" , folderDestination)
-        self.write(longitude + " \n",to: "/gps.txt" , folderDestination)
-        self.write("Hello There \n",to: "/gps.txt" , folderDestination)
+        
     }
     func locationManager(_ manager: CLLocationManager, didUpdateHeading heading: CLHeading) {
         self.acc.text =  String(heading.magneticHeading)
