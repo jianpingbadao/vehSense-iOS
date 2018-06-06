@@ -1,29 +1,21 @@
 //
-//  GPS.swift
+//  Gyroscope.swift
 //  vehsense
 //
-//  Created by Jalil Sarwari on 6/4/18.
+//  Created by Jalil Sarwari on 6/5/18.
 //  Copyright © 2018 Weida Zhong. All rights reserved.
 //
-
-import Foundation
 import CoreLocation
-
-class GPS: FileSystem{
+import Foundation
+class Gyroscope: FileSystem{
     let locationManager = CLLocationManager()
     
+    
     func Go(){
-        //This is what should happen when the go button is clicked
-        self.locationManager.requestAlwaysAuthorization()
-        self.locationManager.requestWhenInUseAuthorization()
         self.createTxtFile()
-        self.writeToTxt()
     }
-    
     func Stop(){
-        locationManager.stopUpdatingLocation()
     }
-    
     func writeToTxt(){
         let speed = locationManager.location?.speed.description
         let latitude = locationManager.location?.coordinate.latitude.description
@@ -39,9 +31,10 @@ class GPS: FileSystem{
     }
     
     func createTxtFile(){
+//        "timestamp","sys_time","abs_timestamp","raw_x_gyro","raw_y_gyro","raw_z_gyro"
         guard let writePath = NSURL(fileURLWithPath: FileSystem.rootFolder).appendingPathComponent(FileSystem.folderDestination) else { return }
-        let file = writePath.appendingPathComponent("gps.txt")
-        let titleString = "timestamp, \t system_time, \t  \t lat, \t \t  lon, \t \t speed, \t bearing, \t provider"
+        let file = writePath.appendingPathComponent("raw_gyro.txt")
+        let titleString = "timestamp, \t sys_time, \t abs_timestamp, \t raw_x_gyro, \t raw_y_gyro, \t raw_z_gyro"
         do {
             try "\(titleString)\n".write(to: file, atomically: true, encoding: String.Encoding.utf8)
         } catch {
