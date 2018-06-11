@@ -17,11 +17,12 @@ class GPS: FileSystem{
         self.locationManager.requestAlwaysAuthorization()
         self.locationManager.requestWhenInUseAuthorization()
         self.createTxtFile()
-        self.writeToTxt()
+        self.startGPS()
+        
     }
     
     func Stop(){
-        locationManager.stopUpdatingLocation()
+        self.stopGPS()
     }
     
     func writeToTxt(){
@@ -30,22 +31,49 @@ class GPS: FileSystem{
         let longitude = locationManager.location?.coordinate.longitude.description
         let formatter = DateFormatter()
         formatter.dateFormat = "yyyyMMddHHmmss"//formats the time into the format we want
-        let dateTime = formatter.string(from: Date())//saves the current time from Date()
-        write(dateTime + " \t ", to: "/gps.txt", FileSystem.folderDestination)
-        write(formatter.string(from: Date()) + " \t ",to: "/gps.txt" , FileSystem.folderDestination)
-        write(latitude! + " \t ",to: "/gps.txt" , FileSystem.folderDestination)
-        write(longitude! + " \t ",to: "/gps.txt" , FileSystem.folderDestination)
-        write(speed! +  " \n",to: "/gps.txt" , FileSystem.folderDestination)
+        write(String(FileSystem.timeStamp) + " \t ", to: "/gps\(FileSystem.fileNumber).txt", FileSystem.folderDestination)
+        write(formatter.string(from: Date()) + " \t ",to: "/gps\(FileSystem.fileNumber).txt" , FileSystem.folderDestination)
+        write(latitude! + " \t ",to: "/gps\(FileSystem.fileNumber).txt" , FileSystem.folderDestination)
+        write(longitude! + " \t ",to: "/gps\(FileSystem.fileNumber).txt" , FileSystem.folderDestination)
+        write(speed! +  " \n",to: "/gps\(FileSystem.fileNumber).txt" , FileSystem.folderDestination)
+        FileSystem.lineCount += 1
     }
     
     func createTxtFile(){
         guard let writePath = NSURL(fileURLWithPath: FileSystem.rootFolder).appendingPathComponent(FileSystem.folderDestination) else { return }
-        let file = writePath.appendingPathComponent("gps.txt")
+        let file = writePath.appendingPathComponent("gps\(FileSystem.fileNumber).txt")
         let titleString = "timestamp, \t system_time, \t  \t lat, \t \t  lon, \t \t speed, \t bearing, \t provider"
         do {
             try "\(titleString)\n".write(to: file, atomically: true, encoding: String.Encoding.utf8)
         } catch {
             print(error)
         }
+    }
+    var timer = Timer()
+    func startGPS() {
+        
+            
+            // Configure a timer to fetch the accelerometer data.
+            self.timer = Timer(fire: Date(), interval: (FileSystem.frequency),
+                               repeats: true, block: { (timer) in
+                                // Get the gyro data.
+                                if(FileSystem.lineCount == FileSystem.lineLimit){
+                                    FileSystem.fileNumber += 1
+                                    self.createTxtFile()
+                                    FileSystem.lineCount = 0
+                                }
+                                self.writeToTxt()
+                                
+                                FileSystem.timeStamp += FileSystem.frequency
+            })
+            
+            // Add the timer to the current run loop.
+            RunLoop.current.add(self.timer, forMode: .defaultRunLoopMode)
+        
+    }
+    
+    func stopGPS() {
+        self.timer.invalidate()
+        locationManager.stopUpdatingLocation()
     }
 }

@@ -12,6 +12,12 @@ class FileSystem{
     static var folderDestination = "Jalil"//used to save the current folder destination to able to locate the files in the future rootFolder/VehSenseData1982379384
     static var rootFolder = ""// this will be directDirectory/vehSenseData
     
+    static var frequency = (1.0/10.0)//This is update frequency time
+    static var lineLimit = 10
+    static var lineCount = 0
+    static var fileNumber = 0
+    static var timeStamp = 0.0
+    
      init(){
         let mainPath = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0]//obtains the path to the user directory
         let directoryDicortPath = mainPath + "/VehSenseDataLAKJ"// this and the next line in the do statement creates a directory named VehSenseData
