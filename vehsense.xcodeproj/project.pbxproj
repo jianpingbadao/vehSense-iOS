@@ -7,12 +7,30 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0BEBE85D13DEFD409D1B7EF4 /* Pods_vehsenseTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 048C78888804A2BDCC106382 /* Pods_vehsenseTests.framework */; };
+		1E214B3C20D906B700BCC96E /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E214B3B20D906B700BCC96E /* MapViewController.swift */; };
+		1E214B3E20DC222800BCC96E /* DataViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E214B3D20DC222800BCC96E /* DataViewController.swift */; };
+		1E214B4020DC238800BCC96E /* SetupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E214B3F20DC238800BCC96E /* SetupViewController.swift */; };
+		1E214B4220DC2E5700BCC96E /* SetupTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E214B4120DC2E5700BCC96E /* SetupTableViewCell.swift */; };
+		1E2C3B9F20E3F392004304EB /* Gyroscope.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E2C3B9E20E3F392004304EB /* Gyroscope.swift */; };
+		1E2C3BA120E4056E004304EB /* Accelerometer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E2C3BA020E4056E004304EB /* Accelerometer.swift */; };
+		1E2C3BA320E410AE004304EB /* Magnetometer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E2C3BA220E410AE004304EB /* Magnetometer.swift */; };
+		1E30DBCB20E03E13009836EC /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E30DBCA20E03E13009836EC /* SettingsViewController.swift */; };
+		1E30DBCD20E0418E009836EC /* SettingsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E30DBCC20E0418E009836EC /* SettingsTableViewCell.swift */; };
+		1E30DBCF20E07BBC009836EC /* BluetoothTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E30DBCE20E07BBC009836EC /* BluetoothTableViewCell.swift */; };
+		1E30DBD120E07CC3009836EC /* BluetoothViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E30DBD020E07CC3009836EC /* BluetoothViewController.swift */; };
+		1E30DBD520E33FE1009836EC /* GPS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E30DBD420E33FE1009836EC /* GPS.swift */; };
+		1E30DBD720E34003009836EC /* Bluetooth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E30DBD620E34003009836EC /* Bluetooth.swift */; };
+		1E5FBCB620E37AF700CCDAE5 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E5FBCB520E37AF700CCDAE5 /* Constants.swift */; };
+		1E85075D20D8AED100204D79 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E85075C20D8AED100204D79 /* SignInViewController.swift */; };
+		1EA950EE20DDEAF800CCDADB /* CoreBluetooth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1EA950ED20DDEAF700CCDADB /* CoreBluetooth.framework */; };
 		3794948F20BB3146001E5D61 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3794948E20BB3146001E5D61 /* AppDelegate.swift */; };
 		3794949120BB3146001E5D61 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3794949020BB3146001E5D61 /* ViewController.swift */; };
 		3794949420BB3146001E5D61 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3794949220BB3146001E5D61 /* Main.storyboard */; };
 		3794949620BB3147001E5D61 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3794949520BB3147001E5D61 /* Assets.xcassets */; };
 		3794949920BB3147001E5D61 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3794949720BB3147001E5D61 /* LaunchScreen.storyboard */; };
 		379494A420BB3147001E5D61 /* vehsenseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 379494A320BB3147001E5D61 /* vehsenseTests.swift */; };
+		ACE47E9274D51B6F3E7BB77B /* Pods_vehsense.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A7E02755CD43A1542E00A9B /* Pods_vehsense.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -26,6 +44,24 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		048C78888804A2BDCC106382 /* Pods_vehsenseTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_vehsenseTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		1A7E02755CD43A1542E00A9B /* Pods_vehsense.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_vehsense.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		1E214B3B20D906B700BCC96E /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		1E214B3D20DC222800BCC96E /* DataViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataViewController.swift; sourceTree = "<group>"; };
+		1E214B3F20DC238800BCC96E /* SetupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetupViewController.swift; sourceTree = "<group>"; };
+		1E214B4120DC2E5700BCC96E /* SetupTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetupTableViewCell.swift; sourceTree = "<group>"; };
+		1E2C3B9E20E3F392004304EB /* Gyroscope.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Gyroscope.swift; sourceTree = "<group>"; };
+		1E2C3BA020E4056E004304EB /* Accelerometer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Accelerometer.swift; sourceTree = "<group>"; };
+		1E2C3BA220E410AE004304EB /* Magnetometer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Magnetometer.swift; sourceTree = "<group>"; };
+		1E30DBCA20E03E13009836EC /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		1E30DBCC20E0418E009836EC /* SettingsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableViewCell.swift; sourceTree = "<group>"; };
+		1E30DBCE20E07BBC009836EC /* BluetoothTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BluetoothTableViewCell.swift; sourceTree = "<group>"; };
+		1E30DBD020E07CC3009836EC /* BluetoothViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BluetoothViewController.swift; sourceTree = "<group>"; };
+		1E30DBD420E33FE1009836EC /* GPS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GPS.swift; sourceTree = "<group>"; };
+		1E30DBD620E34003009836EC /* Bluetooth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bluetooth.swift; sourceTree = "<group>"; };
+		1E5FBCB520E37AF700CCDAE5 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		1E85075C20D8AED100204D79 /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
+		1EA950ED20DDEAF700CCDADB /* CoreBluetooth.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreBluetooth.framework; path = System/Library/Frameworks/CoreBluetooth.framework; sourceTree = SDKROOT; };
 		3794948B20BB3146001E5D61 /* vehsense.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = vehsense.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3794948E20BB3146001E5D61 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3794949020BB3146001E5D61 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -36,6 +72,10 @@
 		3794949F20BB3147001E5D61 /* vehsenseTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = vehsenseTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		379494A320BB3147001E5D61 /* vehsenseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = vehsenseTests.swift; sourceTree = "<group>"; };
 		379494A520BB3147001E5D61 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7EC0125A0F816EF0CF34F80B /* Pods-vehsense.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-vehsense.debug.xcconfig"; path = "Pods/Target Support Files/Pods-vehsense/Pods-vehsense.debug.xcconfig"; sourceTree = "<group>"; };
+		92E119C815130A9E466ABF26 /* Pods-vehsense.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-vehsense.release.xcconfig"; path = "Pods/Target Support Files/Pods-vehsense/Pods-vehsense.release.xcconfig"; sourceTree = "<group>"; };
+		AFF35836ED9FBAA315536B58 /* Pods-vehsenseTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-vehsenseTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-vehsenseTests/Pods-vehsenseTests.release.xcconfig"; sourceTree = "<group>"; };
+		F9235E873F2325EAD4712887 /* Pods-vehsenseTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-vehsenseTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-vehsenseTests/Pods-vehsenseTests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -43,6 +83,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1EA950EE20DDEAF800CCDADB /* CoreBluetooth.framework in Frameworks */,
+				ACE47E9274D51B6F3E7BB77B /* Pods_vehsense.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -50,18 +92,61 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0BEBE85D13DEFD409D1B7EF4 /* Pods_vehsenseTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1E85075E20D8AF5600204D79 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				1E30DBD420E33FE1009836EC /* GPS.swift */,
+				1E30DBD620E34003009836EC /* Bluetooth.swift */,
+				1E5FBCB520E37AF700CCDAE5 /* Constants.swift */,
+				1E2C3B9E20E3F392004304EB /* Gyroscope.swift */,
+				1E2C3BA020E4056E004304EB /* Accelerometer.swift */,
+				1E2C3BA220E410AE004304EB /* Magnetometer.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		1E85075F20D8AF6000204D79 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				3794949220BB3146001E5D61 /* Main.storyboard */,
+				3794949720BB3147001E5D61 /* LaunchScreen.storyboard */,
+				1E214B4120DC2E5700BCC96E /* SetupTableViewCell.swift */,
+				1E30DBCC20E0418E009836EC /* SettingsTableViewCell.swift */,
+				1E30DBCE20E07BBC009836EC /* BluetoothTableViewCell.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		1E85076020D8AF6900204D79 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				3794948E20BB3146001E5D61 /* AppDelegate.swift */,
+				3794949020BB3146001E5D61 /* ViewController.swift */,
+				1E85075C20D8AED100204D79 /* SignInViewController.swift */,
+				1E214B3B20D906B700BCC96E /* MapViewController.swift */,
+				1E214B3D20DC222800BCC96E /* DataViewController.swift */,
+				1E214B3F20DC238800BCC96E /* SetupViewController.swift */,
+				1E30DBCA20E03E13009836EC /* SettingsViewController.swift */,
+				1E30DBD020E07CC3009836EC /* BluetoothViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
 		3794948220BB3146001E5D61 = {
 			isa = PBXGroup;
 			children = (
 				3794948D20BB3146001E5D61 /* vehsense */,
 				379494A220BB3147001E5D61 /* vehsenseTests */,
 				3794948C20BB3146001E5D61 /* Products */,
+				B25ED99836D88FECE6EB74F6 /* Pods */,
+				D3E9D45102D61F246A301CE2 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -77,11 +162,10 @@
 		3794948D20BB3146001E5D61 /* vehsense */ = {
 			isa = PBXGroup;
 			children = (
-				3794948E20BB3146001E5D61 /* AppDelegate.swift */,
-				3794949020BB3146001E5D61 /* ViewController.swift */,
-				3794949220BB3146001E5D61 /* Main.storyboard */,
+				1E85076020D8AF6900204D79 /* Controller */,
+				1E85075F20D8AF6000204D79 /* View */,
+				1E85075E20D8AF5600204D79 /* Model */,
 				3794949520BB3147001E5D61 /* Assets.xcassets */,
-				3794949720BB3147001E5D61 /* LaunchScreen.storyboard */,
 				3794949A20BB3147001E5D61 /* Info.plist */,
 			);
 			path = vehsense;
@@ -96,6 +180,27 @@
 			path = vehsenseTests;
 			sourceTree = "<group>";
 		};
+		B25ED99836D88FECE6EB74F6 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				7EC0125A0F816EF0CF34F80B /* Pods-vehsense.debug.xcconfig */,
+				92E119C815130A9E466ABF26 /* Pods-vehsense.release.xcconfig */,
+				F9235E873F2325EAD4712887 /* Pods-vehsenseTests.debug.xcconfig */,
+				AFF35836ED9FBAA315536B58 /* Pods-vehsenseTests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		D3E9D45102D61F246A301CE2 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1EA950ED20DDEAF700CCDADB /* CoreBluetooth.framework */,
+				1A7E02755CD43A1542E00A9B /* Pods_vehsense.framework */,
+				048C78888804A2BDCC106382 /* Pods_vehsenseTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -103,6 +208,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 379494A820BB3147001E5D61 /* Build configuration list for PBXNativeTarget "vehsense" */;
 			buildPhases = (
+				2FE0BE3418D54CE4990B0540 /* [CP] Check Pods Manifest.lock */,
 				3794948720BB3146001E5D61 /* Sources */,
 				3794948820BB3146001E5D61 /* Frameworks */,
 				3794948920BB3146001E5D61 /* Resources */,
@@ -120,6 +226,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 379494AB20BB3147001E5D61 /* Build configuration list for PBXNativeTarget "vehsenseTests" */;
 			buildPhases = (
+				ADC15D34CDF9A5A0D17C71D8 /* [CP] Check Pods Manifest.lock */,
 				3794949B20BB3147001E5D61 /* Sources */,
 				3794949C20BB3147001E5D61 /* Frameworks */,
 				3794949D20BB3147001E5D61 /* Resources */,
@@ -192,13 +299,67 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		2FE0BE3418D54CE4990B0540 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-vehsense-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		ADC15D34CDF9A5A0D17C71D8 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-vehsenseTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		3794948720BB3146001E5D61 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1E85075D20D8AED100204D79 /* SignInViewController.swift in Sources */,
 				3794949120BB3146001E5D61 /* ViewController.swift in Sources */,
+				1E30DBD520E33FE1009836EC /* GPS.swift in Sources */,
+				1E30DBCD20E0418E009836EC /* SettingsTableViewCell.swift in Sources */,
+				1E214B3E20DC222800BCC96E /* DataViewController.swift in Sources */,
 				3794948F20BB3146001E5D61 /* AppDelegate.swift in Sources */,
+				1E2C3BA320E410AE004304EB /* Magnetometer.swift in Sources */,
+				1E214B4220DC2E5700BCC96E /* SetupTableViewCell.swift in Sources */,
+				1E30DBCF20E07BBC009836EC /* BluetoothTableViewCell.swift in Sources */,
+				1E30DBD120E07CC3009836EC /* BluetoothViewController.swift in Sources */,
+				1E2C3BA120E4056E004304EB /* Accelerometer.swift in Sources */,
+				1E214B3C20D906B700BCC96E /* MapViewController.swift in Sources */,
+				1E214B4020DC238800BCC96E /* SetupViewController.swift in Sources */,
+				1E5FBCB620E37AF700CCDAE5 /* Constants.swift in Sources */,
+				1E2C3B9F20E3F392004304EB /* Gyroscope.swift in Sources */,
+				1E30DBD720E34003009836EC /* Bluetooth.swift in Sources */,
+				1E30DBCB20E03E13009836EC /* SettingsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -356,14 +517,17 @@
 		};
 		379494A920BB3147001E5D61 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7EC0125A0F816EF0CF34F80B /* Pods-vehsense.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 6VBGP45D96;
 				INFOPLIST_FILE = vehsense/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = edu.buffalo.cse.weida.vehsense;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -373,14 +537,17 @@
 		};
 		379494AA20BB3147001E5D61 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 92E119C815130A9E466ABF26 /* Pods-vehsense.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 6VBGP45D96;
 				INFOPLIST_FILE = vehsense/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = edu.buffalo.cse.weida.vehsense;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -390,6 +557,7 @@
 		};
 		379494AC20BB3147001E5D61 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F9235E873F2325EAD4712887 /* Pods-vehsenseTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -410,6 +578,7 @@
 		};
 		379494AD20BB3147001E5D61 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = AFF35836ED9FBAA315536B58 /* Pods-vehsenseTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";

@@ -25,6 +25,7 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+
         let mainPath = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0]//obtains the path to the user directory
         let directoryDicortPath = mainPath + "/VehSenseData"// this and the next line in the do statement creates a directory named VehSenseData
         do{
