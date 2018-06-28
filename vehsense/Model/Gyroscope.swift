@@ -13,6 +13,8 @@ class Gyroscope{
     
     static let shared = Gyroscope()
     
+    var isOn = false
+    
     var motionManager = CMMotionManager()
     
     let notificationName = Notification.Name.init(gyroscopeNotification)

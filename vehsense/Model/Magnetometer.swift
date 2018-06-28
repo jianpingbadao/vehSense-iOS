@@ -13,6 +13,8 @@ class Magnetometer{
     
     static let shared = Magnetometer()
     
+    var isOn = false
+    
     var motionManager = CMMotionManager()
     
     let notificationName = Notification.Name.init(magnetometerNotification)

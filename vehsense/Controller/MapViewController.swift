@@ -17,9 +17,7 @@ class MapViewController: UIViewController {
         super.viewDidLoad()
         
         // Do any additional setup after loading the view.
-        
-        //add turning on and off GPS from Settings
-        GPS.shared.startLocating()
+       
         let notificationName = Notification.Name.init(gpsNotification)
         NotificationCenter.default.addObserver(self, selector: #selector(MapViewController.updateLocation(notification:)), name: notificationName, object: nil)
     }

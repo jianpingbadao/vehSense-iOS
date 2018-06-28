@@ -32,27 +32,39 @@ class DataViewController: UIViewController {
         super.viewDidLoad()
         
         // Do any additional setup after loading the view.
-        
-        //add start locating to settings
-        GPS.shared.startLocating()
-
         NotificationCenter.default.addObserver(self, selector: #selector(DataViewController.updateCoordinates(notification:)), name: Notification.Name.init(gpsNotification), object: nil)
-        
-        //add start gyroscope to settings
-        Gyroscope.shared.startGyroscope()
         
         NotificationCenter.default.addObserver(self, selector: #selector(DataViewController.updateGyroscope(notification:)), name: Notification.Name.init(gyroscopeNotification), object: nil)
         
-        //add start accelerometer to settings
-        Accelerometer.shared.startAccelerometer()
-        
         NotificationCenter.default.addObserver(self, selector: #selector(DataViewController.updateAccelerometer(notification:)), name: Notification.Name.init(accelerometerNotification), object: nil)
         
-        Magnetometer.shared.startMagnetometer()
-        
         NotificationCenter.default.addObserver(self, selector: #selector(DataViewController.updateMagnetometer(notification:)), name: Notification.Name.init(magnetometerNotification), object: nil)
-   
-
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        if !GPS.shared.selectedState{
+            latitudeLabel.text = "---"
+            longitudeLabel.text = "---"
+        }
+        
+        if !Setup.shared.accSelectedState{
+            accXLabel.text = "x:"
+            accYLabel.text = "y:"
+            accZLabel.text = "z:"
+        }
+        
+        if !Setup.shared.magSelectedState{
+            magXLabel.text = "x:"
+            magYLabel.text = "y:"
+            magZLabel.text = "z:"
+        }
+        
+        if !Setup.shared.gyroSelectedState{
+            gyroXLabel.text = "x:"
+            gyroYLabel.text = "y:"
+            gyroZLabel.text = "z:"
+        }
+        
     }
     
     @objc func updateCoordinates(notification : Notification)

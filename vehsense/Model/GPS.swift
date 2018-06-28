@@ -12,6 +12,9 @@ import CoreLocation
 class GPS : NSObject , CLLocationManagerDelegate {
     
     static let shared = GPS()
+    
+    var selectedState = false
+    var isLocating = false
 
     let locationManager = CLLocationManager()
     

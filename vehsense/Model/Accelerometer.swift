@@ -13,6 +13,8 @@ class Accelerometer{
     
     static let shared = Accelerometer()
     
+    var isOn = false
+    
     var motionManager = CMMotionManager()
     
     let notificationName = Notification.Name.init(accelerometerNotification)
