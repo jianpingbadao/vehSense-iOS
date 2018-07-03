@@ -25,9 +25,9 @@ class BluetoothViewController: UIViewController, UITableViewDelegate {
         centralManager = CBCentralManager(delegate: self, queue: nil)
         bluetoothTableView.dataSource = self
         bluetoothTableView.delegate = self
-
+        
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -64,7 +64,7 @@ extension BluetoothViewController : UITableViewDataSource{
                 present(alert, animated: true, completion: nil)
             }
         }
-        
+            
         else{
             
             let alertMessage = "Do you want to connect to \(deviceArray[indexPath.row].name ?? "no name")?"
@@ -126,16 +126,20 @@ extension BluetoothViewController : CBCentralManagerDelegate{
 extension BluetoothViewController : CBPeripheralDelegate{
     
     func peripheral(_ peripheral: CBPeripheral, didDiscoverServices error: Error?) {
-        if let services = peripheral.services{
-            for service in services{
-                print("\(peripheral.name) has service with uuid \(service.uuid.uuidString)")
-            }
-        }
+      
     }
     
+    func peripheral(_ peripheral: CBPeripheral, didDiscoverCharacteristicsFor service: CBService, error: Error?) {
+        
+    }
+    
+    
+    func peripheral(_ peripheral: CBPeripheral, didUpdateValueFor characteristic: CBCharacteristic, error: Error?) {
+        
+    }
+    
+    func updatecharacteristic(char : CBCharacteristic){
+
+    }
+
 }
-
-
-
-
-

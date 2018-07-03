@@ -26,6 +26,8 @@
 		1E5FBCB620E37AF700CCDAE5 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E5FBCB520E37AF700CCDAE5 /* Constants.swift */; };
 		1E85075D20D8AED100204D79 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E85075C20D8AED100204D79 /* SignInViewController.swift */; };
 		1EA950EE20DDEAF800CCDADB /* CoreBluetooth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1EA950ED20DDEAF700CCDADB /* CoreBluetooth.framework */; };
+		1EC8962820E9D26A005EA43B /* Recorder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EC8962720E9D26A005EA43B /* Recorder.swift */; };
+		1EC8962C20E9D48A005EA43B /* VideoHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EC8962B20E9D48A005EA43B /* VideoHelper.swift */; };
 		3794948F20BB3146001E5D61 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3794948E20BB3146001E5D61 /* AppDelegate.swift */; };
 		3794949120BB3146001E5D61 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3794949020BB3146001E5D61 /* ViewController.swift */; };
 		3794949420BB3146001E5D61 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3794949220BB3146001E5D61 /* Main.storyboard */; };
@@ -66,6 +68,8 @@
 		1E5FBCB520E37AF700CCDAE5 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		1E85075C20D8AED100204D79 /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
 		1EA950ED20DDEAF700CCDADB /* CoreBluetooth.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreBluetooth.framework; path = System/Library/Frameworks/CoreBluetooth.framework; sourceTree = SDKROOT; };
+		1EC8962720E9D26A005EA43B /* Recorder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Recorder.swift; sourceTree = "<group>"; };
+		1EC8962B20E9D48A005EA43B /* VideoHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoHelper.swift; sourceTree = "<group>"; };
 		3794948B20BB3146001E5D61 /* vehsense.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = vehsense.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3794948E20BB3146001E5D61 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3794949020BB3146001E5D61 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -113,6 +117,8 @@
 				1E2C3BA020E4056E004304EB /* Accelerometer.swift */,
 				1E2C3BA220E410AE004304EB /* Magnetometer.swift */,
 				1E2C3BA420E4844A004304EB /* Setup.swift */,
+				1EC8962720E9D26A005EA43B /* Recorder.swift */,
+				1EC8962B20E9D48A005EA43B /* VideoHelper.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -218,6 +224,7 @@
 				3794948720BB3146001E5D61 /* Sources */,
 				3794948820BB3146001E5D61 /* Frameworks */,
 				3794948920BB3146001E5D61 /* Resources */,
+				824344AE4304834B81F0F3C5 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -324,6 +331,28 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		824344AE4304834B81F0F3C5 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-vehsense/Pods-vehsense-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/OBD2_BLE/OBD2_BLE.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/OBD2_BLE.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-vehsense/Pods-vehsense-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		ADC15D34CDF9A5A0D17C71D8 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -356,6 +385,7 @@
 				1E214B3E20DC222800BCC96E /* DataViewController.swift in Sources */,
 				3794948F20BB3146001E5D61 /* AppDelegate.swift in Sources */,
 				1E2C3BA320E410AE004304EB /* Magnetometer.swift in Sources */,
+				1EC8962C20E9D48A005EA43B /* VideoHelper.swift in Sources */,
 				1E2C3BA520E4844A004304EB /* Setup.swift in Sources */,
 				1E214B4220DC2E5700BCC96E /* SetupTableViewCell.swift in Sources */,
 				1E30DBCF20E07BBC009836EC /* BluetoothTableViewCell.swift in Sources */,
@@ -364,6 +394,7 @@
 				1E214B3C20D906B700BCC96E /* MapViewController.swift in Sources */,
 				1E214B4020DC238800BCC96E /* SetupViewController.swift in Sources */,
 				1E2C3BA720E4A85A004304EB /* GPSTableViewCell.swift in Sources */,
+				1EC8962820E9D26A005EA43B /* Recorder.swift in Sources */,
 				1E5FBCB620E37AF700CCDAE5 /* Constants.swift in Sources */,
 				1E2C3B9F20E3F392004304EB /* Gyroscope.swift in Sources */,
 				1E30DBD720E34003009836EC /* Bluetooth.swift in Sources */,
@@ -527,6 +558,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 7EC0125A0F816EF0CF34F80B /* Pods-vehsense.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 6VBGP45D96;
@@ -547,6 +579,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 92E119C815130A9E466ABF26 /* Pods-vehsense.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 6VBGP45D96;

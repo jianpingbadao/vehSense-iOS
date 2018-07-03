@@ -9,9 +9,14 @@
 import UIKit
 import CoreLocation
 import CoreMotion
+import MobileCoreServices
 
 class DataViewController: UIViewController {
 
+    @IBOutlet weak var mphLabel: UILabel!
+    
+    @IBOutlet weak var bearingLabel: UILabel!
+    
     @IBOutlet weak var latitudeLabel: UILabel!
     @IBOutlet weak var longitudeLabel: UILabel!
     
@@ -45,6 +50,9 @@ class DataViewController: UIViewController {
         if !GPS.shared.selectedState{
             latitudeLabel.text = "---"
             longitudeLabel.text = "---"
+            bearingLabel.text = "---"
+            mphLabel.text = "0.0"
+            
         }
         
         if !Setup.shared.accSelectedState{
@@ -72,6 +80,12 @@ class DataViewController: UIViewController {
         guard let location = notification.userInfo?["location"] as? CLLocation else { return }
         latitudeLabel.text = String(location.coordinate.latitude)
         longitudeLabel.text = String(location.coordinate.longitude)
+        
+        bearingLabel.text = String(location.course)
+        
+        var currentSpeed = location.speed
+        currentSpeed = currentSpeed < 0 ? 0 : currentSpeed * 2.23694
+        mphLabel.text = String(format: "%.1f", currentSpeed)
     }
     
     @objc func updateGyroscope(notification : Notification)
@@ -100,4 +114,15 @@ class DataViewController: UIViewController {
         magZLabel.text = "z: \(magData.magneticField.z)"
     }
     
+    @IBAction func viewRecordPressed(_ sender: UIButton) {
+        VideoHelper.startMediaBrowser(delegate: self, sourceType: .camera)
+
+    }
+    
+}
+
+extension DataViewController: UIImagePickerControllerDelegate {
+}
+
+extension DataViewController: UINavigationControllerDelegate {
 }

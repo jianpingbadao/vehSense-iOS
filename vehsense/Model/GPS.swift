@@ -15,7 +15,7 @@ class GPS : NSObject , CLLocationManagerDelegate {
     
     var selectedState = false
     var isLocating = false
-
+    
     let locationManager = CLLocationManager()
     
     let notificationName = Notification.Name.init(rawValue: gpsNotification)
@@ -39,7 +39,6 @@ class GPS : NSObject , CLLocationManagerDelegate {
 
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         guard let location = locations.first else {return}
-
         let data = ["location": location]
         NotificationCenter.default.post(name: notificationName, object: nil, userInfo: data)
         
