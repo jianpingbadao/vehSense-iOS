@@ -47,7 +47,7 @@ class DataViewController: UIViewController {
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        if !GPS.shared.selectedState{
+        if !GPS.shared.selectedState || !GPS.shared.isAuth(){
             latitudeLabel.text = "---"
             longitudeLabel.text = "---"
             bearingLabel.text = "---"

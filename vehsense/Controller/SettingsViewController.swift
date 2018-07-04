@@ -48,7 +48,29 @@ class SettingsViewController: UIViewController, UITableViewDelegate {
     
     @objc func switchAction(sender : UISwitch)
     {
-        GPS.shared.selectedState = !GPS.shared.selectedState
+        if GPS.shared.isAuth() == false{
+            let alertController = UIAlertController(title: NSLocalizedString("Enable location services to use this feature", comment: ""), message: NSLocalizedString("", comment: ""), preferredStyle: .alert)
+            
+            let cancelAction = UIAlertAction(title: NSLocalizedString("Cancel", comment: ""), style: .cancel, handler: nil)
+            let settingsAction = UIAlertAction(title: NSLocalizedString("Settings", comment: ""), style: .default) { (UIAlertAction) in
+                UIApplication.shared.openURL(NSURL(string: UIApplicationOpenSettingsURLString)! as URL)
+            }
+            
+            alertController.addAction(cancelAction)
+            alertController.addAction(settingsAction)
+            self.present(alertController, animated: true, completion: nil)
+            
+            sender.isOn = false
+            GPS.shared.selectedState = false
+            GPS.shared.isLocating = false
+            GPS.shared.stopLocating()
+        }
+        
+        else{ GPS.shared.selectedState = !GPS.shared.selectedState
+            
+        }
+        
+        
         
     }
     

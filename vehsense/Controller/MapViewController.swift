@@ -22,10 +22,22 @@ class MapViewController: UIViewController {
         NotificationCenter.default.addObserver(self, selector: #selector(MapViewController.updateLocation(notification:)), name: notificationName, object: nil)
     }
     
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    override func viewDidAppear(_ animated: Bool) {
+        
+        if GPS.shared.isAuth() == false{
+            let alertController = UIAlertController(title: NSLocalizedString("Enable location services to use this feature", comment: ""), message: NSLocalizedString("", comment: ""), preferredStyle: .alert)
+            
+            let cancelAction = UIAlertAction(title: NSLocalizedString("Cancel", comment: ""), style: .cancel, handler: nil)
+            let settingsAction = UIAlertAction(title: NSLocalizedString("Settings", comment: ""), style: .default) { (UIAlertAction) in
+                UIApplication.shared.openURL(NSURL(string: UIApplicationOpenSettingsURLString)! as URL)
+            }
+            
+            alertController.addAction(cancelAction)
+            alertController.addAction(settingsAction)
+            self.present(alertController, animated: true, completion: nil)
+        }
     }
+    
     
     @objc func updateLocation(notification : Notification){
         guard let location = notification.userInfo?["location"] as? CLLocation else { return }

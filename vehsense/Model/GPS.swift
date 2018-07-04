@@ -15,7 +15,7 @@ class GPS : NSObject , CLLocationManagerDelegate {
     
     var selectedState = false
     var isLocating = false
-    
+
     let locationManager = CLLocationManager()
     
     let notificationName = Notification.Name.init(rawValue: gpsNotification)
@@ -32,10 +32,25 @@ class GPS : NSObject , CLLocationManagerDelegate {
         locationManager.startUpdatingLocation()
     }
     
-    func stopLocating() {
+    func stopLocating(){
         locationManager.stopUpdatingLocation()
     }
-
+    
+    func checkLocationServices() -> Bool{
+        return CLLocationManager.locationServicesEnabled()
+    }
+    
+    
+    func isAuth() -> Bool{
+            switch(CLLocationManager.authorizationStatus()) {
+            case .notDetermined, .restricted, .denied:
+                return false
+            case .authorizedAlways, .authorizedWhenInUse:
+                return true
+        }
+        
+    }
+    
 
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         guard let location = locations.first else {return}
