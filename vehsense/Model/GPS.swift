@@ -13,8 +13,7 @@ class GPS : NSObject , CLLocationManagerDelegate {
     
     static let shared = GPS()
     
-    var selectedState = false
-    var isLocating = false
+    var isOn = false
 
     let locationManager = CLLocationManager()
     
@@ -28,12 +27,15 @@ class GPS : NSObject , CLLocationManagerDelegate {
         locationManager.desiredAccuracy = kCLLocationAccuracyBestForNavigation
     }
     
-    func startLocating(){
+    
+    func turnOn(){
         locationManager.startUpdatingLocation()
+        isOn = true
     }
     
-    func stopLocating(){
+    func turnOff(){
         locationManager.stopUpdatingLocation()
+        isOn = false
     }
     
     func checkLocationServices() -> Bool{

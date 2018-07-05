@@ -15,6 +15,8 @@ class SettingsViewController: UIViewController, UITableViewDelegate {
     let settingsArray = ["GPS","Bluetooth", "Account"]
     let settingsIconArray = [#imageLiteral(resourceName: "gpsIcon"),#imageLiteral(resourceName: "bluetoothIcon"),#imageLiteral(resourceName: "accountIcon")]
     
+    @IBOutlet weak var gpsSwitch: UISwitch!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -25,25 +27,22 @@ class SettingsViewController: UIViewController, UITableViewDelegate {
 
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    override func viewDidAppear(_ animated: Bool)
+    {
+        if GPS.shared.isAuth() == false{
+            gpsIsOff()
+        }
     }
     
-    override func viewDidDisappear(_ animated: Bool) {
-        if GPS.shared.isLocating{
-            if GPS.shared.selectedState == false{
-                GPS.shared.stopLocating()
-                GPS.shared.isLocating = false
-            }
+    override func viewDidDisappear(_ animated: Bool)
+    {
+        if Settings.shared.gpsState == true{
+            GPS.shared.turnOn()
         }
-        else if !GPS.shared.isLocating{
-            if GPS.shared.selectedState == true{
-                GPS.shared.startLocating()
-                GPS.shared.isLocating = true
-            }
+            
+        else if Settings.shared.gpsState == false{
+            GPS.shared.turnOff()
         }
-        
     }
     
     @objc func switchAction(sender : UISwitch)
@@ -60,18 +59,19 @@ class SettingsViewController: UIViewController, UITableViewDelegate {
             alertController.addAction(settingsAction)
             self.present(alertController, animated: true, completion: nil)
             
-            sender.isOn = false
-            GPS.shared.selectedState = false
-            GPS.shared.isLocating = false
-            GPS.shared.stopLocating()
-        }
-        
-        else{ GPS.shared.selectedState = !GPS.shared.selectedState
+            gpsIsOff()
             
         }
         
-        
-        
+        else{ Settings.shared.gpsState = !Settings.shared.gpsState
+            
+        }
+    }
+    
+    func gpsIsOff(){
+        Settings.shared.gpsState = false
+        gpsSwitch.isOn = false
+        GPS.shared.turnOff()
     }
     
 }
@@ -88,7 +88,11 @@ extension SettingsViewController : UITableViewDataSource{
             let cell = settingsTableView.dequeueReusableCell(withIdentifier: "gpsCell", for: indexPath) as! GPSTableViewCell
             cell.settingLabel.text = settingsArray[indexPath.row]
             cell.settingIcon.image = settingsIconArray[indexPath.row]
-            cell.gpsSwitch.isOn = GPS.shared.selectedState
+            cell.selectionStyle = .none
+            
+            gpsSwitch = cell.gpsSwitch
+            cell.gpsSwitch.isOn = Settings.shared.gpsState
+            
             cell.gpsSwitch.addTarget(self, action: #selector(switchAction(sender:)), for: .valueChanged)
             return cell
         

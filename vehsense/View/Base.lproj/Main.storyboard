@@ -157,7 +157,7 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <outlet property="gpsSwitch" destination="2y5-9p-3i5" id="fhG-31-Uke"/>
+                                            <outlet property="gpsSwitch" destination="2y5-9p-3i5" id="zYL-VJ-fuG"/>
                                             <outlet property="settingIcon" destination="ma9-LZ-4NS" id="oq6-5X-tGp"/>
                                             <outlet property="settingLabel" destination="BFF-iI-sc0" id="ypB-ev-94E"/>
                                         </connections>

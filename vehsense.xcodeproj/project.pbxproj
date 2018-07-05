@@ -28,6 +28,7 @@
 		1EA950EE20DDEAF800CCDADB /* CoreBluetooth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1EA950ED20DDEAF700CCDADB /* CoreBluetooth.framework */; };
 		1EC8962820E9D26A005EA43B /* Recorder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EC8962720E9D26A005EA43B /* Recorder.swift */; };
 		1EC8962C20E9D48A005EA43B /* VideoHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EC8962B20E9D48A005EA43B /* VideoHelper.swift */; };
+		1EC8962E20EEA83C005EA43B /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EC8962D20EEA83C005EA43B /* Settings.swift */; };
 		3794948F20BB3146001E5D61 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3794948E20BB3146001E5D61 /* AppDelegate.swift */; };
 		3794949120BB3146001E5D61 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3794949020BB3146001E5D61 /* ViewController.swift */; };
 		3794949420BB3146001E5D61 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3794949220BB3146001E5D61 /* Main.storyboard */; };
@@ -70,6 +71,7 @@
 		1EA950ED20DDEAF700CCDADB /* CoreBluetooth.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreBluetooth.framework; path = System/Library/Frameworks/CoreBluetooth.framework; sourceTree = SDKROOT; };
 		1EC8962720E9D26A005EA43B /* Recorder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Recorder.swift; sourceTree = "<group>"; };
 		1EC8962B20E9D48A005EA43B /* VideoHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoHelper.swift; sourceTree = "<group>"; };
+		1EC8962D20EEA83C005EA43B /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
 		3794948B20BB3146001E5D61 /* vehsense.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = vehsense.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3794948E20BB3146001E5D61 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3794949020BB3146001E5D61 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -119,6 +121,7 @@
 				1E2C3BA420E4844A004304EB /* Setup.swift */,
 				1EC8962720E9D26A005EA43B /* Recorder.swift */,
 				1EC8962B20E9D48A005EA43B /* VideoHelper.swift */,
+				1EC8962D20EEA83C005EA43B /* Settings.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -128,10 +131,10 @@
 			children = (
 				3794949220BB3146001E5D61 /* Main.storyboard */,
 				3794949720BB3147001E5D61 /* LaunchScreen.storyboard */,
-				1E214B4120DC2E5700BCC96E /* SetupTableViewCell.swift */,
 				1E30DBCC20E0418E009836EC /* SettingsTableViewCell.swift */,
 				1E30DBCE20E07BBC009836EC /* BluetoothTableViewCell.swift */,
 				1E2C3BA620E4A85A004304EB /* GPSTableViewCell.swift */,
+				1E214B4120DC2E5700BCC96E /* SetupTableViewCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -375,6 +378,7 @@
 				1E5FBCB620E37AF700CCDAE5 /* Constants.swift in Sources */,
 				1E2C3B9F20E3F392004304EB /* Gyroscope.swift in Sources */,
 				1E30DBD720E34003009836EC /* Bluetooth.swift in Sources */,
+				1EC8962E20EEA83C005EA43B /* Settings.swift in Sources */,
 				1E30DBCB20E03E13009836EC /* SettingsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -540,7 +544,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 6VBGP45D96;
 				INFOPLIST_FILE = vehsense/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = edu.buffalo.cse.weida.vehsense;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -558,7 +565,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 6VBGP45D96;
 				INFOPLIST_FILE = vehsense/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = edu.buffalo.cse.weida.vehsense;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -575,7 +585,11 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = vehsenseTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = edu.buffalo.cse.weida.vehsenseTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -592,7 +606,11 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = vehsenseTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = edu.buffalo.cse.weida.vehsenseTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
