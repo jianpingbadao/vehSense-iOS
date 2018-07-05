@@ -48,19 +48,19 @@ class SettingsViewController: UIViewController, UITableViewDelegate {
     @objc func switchAction(sender : UISwitch)
     {
         if GPS.shared.isAuth() == false{
-            let alertController = UIAlertController(title: NSLocalizedString("Enable location services to use this feature", comment: ""), message: NSLocalizedString("", comment: ""), preferredStyle: .alert)
-            
-            let cancelAction = UIAlertAction(title: NSLocalizedString("Cancel", comment: ""), style: .cancel, handler: nil)
-            let settingsAction = UIAlertAction(title: NSLocalizedString("Settings", comment: ""), style: .default) { (UIAlertAction) in
-                UIApplication.shared.openURL(NSURL(string: UIApplicationOpenSettingsURLString)! as URL)
+            if Settings.shared.gpsState == false{
+                let alertController = UIAlertController(title: NSLocalizedString("Enable location services to use this feature", comment: ""), message: NSLocalizedString("", comment: ""), preferredStyle: .alert)
+                
+                let cancelAction = UIAlertAction(title: NSLocalizedString("Cancel", comment: ""), style: .cancel, handler: nil)
+                let settingsAction = UIAlertAction(title: NSLocalizedString("Settings", comment: ""), style: .default) { (UIAlertAction) in
+                    UIApplication.shared.openURL(NSURL(string: UIApplicationOpenSettingsURLString)! as URL)
+                }
+                
+                alertController.addAction(cancelAction)
+                alertController.addAction(settingsAction)
+                self.present(alertController, animated: true, completion: nil)
             }
-            
-            alertController.addAction(cancelAction)
-            alertController.addAction(settingsAction)
-            self.present(alertController, animated: true, completion: nil)
-            
             gpsIsOff()
-            
         }
         
         else{ Settings.shared.gpsState = !Settings.shared.gpsState
