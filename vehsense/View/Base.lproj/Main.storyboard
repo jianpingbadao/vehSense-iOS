@@ -182,7 +182,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Apj-Ch-7va" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1344.8" y="2565.9670164917543"/>
+            <point key="canvasLocation" x="1345" y="3233"/>
         </scene>
         <!--Bluetooth View Controller-->
         <scene sceneID="v8G-2t-Eca">
@@ -247,7 +247,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="i4Z-rm-zTi" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2221.5999999999999" y="2565.9670164917543"/>
+            <point key="canvasLocation" x="2260" y="3233"/>
         </scene>
         <!--Sign In View Controller-->
         <scene sceneID="5PN-PJ-ziP">
@@ -720,6 +720,22 @@
             </objects>
             <point key="canvasLocation" x="1344.8" y="892.80359820089961"/>
         </scene>
+        <!--Log-->
+        <scene sceneID="afq-jI-B4r">
+            <objects>
+                <viewController id="Hkk-Si-Y49" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="asw-WW-eK1">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="RmJ-d7-3Z0"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Log" image="logIcon" id="vrp-aA-tqd"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Mmu-NB-7nE" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="481" y="1694"/>
+        </scene>
         <!--Setup View Controller-->
         <scene sceneID="ycj-BI-4gD">
             <objects>
@@ -810,7 +826,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="z4W-PZ-rbW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="481" y="1746"/>
+            <point key="canvasLocation" x="481" y="2442"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="pUz-Sm-zx7">
@@ -824,6 +840,7 @@
                     </tabBar>
                     <connections>
                         <segue destination="MXV-gs-B90" kind="relationship" relationship="viewControllers" id="IXJ-oI-Hc2"/>
+                        <segue destination="Hkk-Si-Y49" kind="relationship" relationship="viewControllers" id="Bce-VE-X1I"/>
                         <segue destination="p2O-H2-eNi" kind="relationship" relationship="viewControllers" id="DAE-iK-8iQ"/>
                         <segue destination="sFa-7h-r0u" kind="relationship" relationship="viewControllers" id="M5X-f7-Eh1"/>
                     </connections>
@@ -868,7 +885,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Y38-Y6-Cr5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="480.80000000000001" y="2565.9670164917543"/>
+            <point key="canvasLocation" x="481" y="3233"/>
         </scene>
     </scenes>
     <resources>
@@ -879,6 +896,7 @@
         <image name="dataIcon" width="20" height="20"/>
         <image name="gyroscopeIcon" width="40" height="40"/>
         <image name="latitudeIcon" width="40" height="40"/>
+        <image name="logIcon" width="20" height="20"/>
         <image name="longitudeIcon" width="40" height="40"/>
         <image name="magnitudeIcon" width="40" height="40"/>
         <image name="mapIcon" width="20" height="20"/>

@@ -24,11 +24,12 @@ class SettingsViewController: UIViewController, UITableViewDelegate {
         
         settingsTableView.delegate = self
         settingsTableView.dataSource = self
-
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(updateSwitch), name: .UIApplicationWillEnterForeground, object: nil)
     }
-
-    override func viewDidAppear(_ animated: Bool)
-    {
+    
+    
+    @objc func updateSwitch(){
         if GPS.shared.isAuth() == false{
             gpsIsOff()
         }

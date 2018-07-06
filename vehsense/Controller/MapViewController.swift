@@ -22,7 +22,7 @@ class MapViewController: UIViewController {
         NotificationCenter.default.addObserver(self, selector: #selector(MapViewController.updateLocation(notification:)), name: notificationName, object: nil)
     }
     
-    override func viewDidAppear(_ animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
         
         if GPS.shared.isAuth() == false{
             let alertController = UIAlertController(title: NSLocalizedString("Enable location services to use this feature", comment: ""), message: NSLocalizedString("", comment: ""), preferredStyle: .alert)

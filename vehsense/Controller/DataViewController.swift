@@ -46,7 +46,7 @@ class DataViewController: UIViewController {
         NotificationCenter.default.addObserver(self, selector: #selector(DataViewController.updateMagnetometer(notification:)), name: Notification.Name.init(magnetometerNotification), object: nil)
     }
     
-    override func viewDidAppear(_ animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
         if !Settings.shared.gpsState || !GPS.shared.isAuth(){
             latitudeLabel.text = "---"
             longitudeLabel.text = "---"
