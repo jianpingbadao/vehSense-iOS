@@ -24,11 +24,20 @@
 		1E30DBD520E33FE1009836EC /* GPS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E30DBD420E33FE1009836EC /* GPS.swift */; };
 		1E30DBD720E34003009836EC /* Bluetooth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E30DBD620E34003009836EC /* Bluetooth.swift */; };
 		1E5FBCB620E37AF700CCDAE5 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E5FBCB520E37AF700CCDAE5 /* Constants.swift */; };
+		1E7FD61820FE749500194549 /* SpreadsheetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E7FD61720FE749500194549 /* SpreadsheetViewController.swift */; };
+		1E7FD61A20FE7A9100194549 /* Cells.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E7FD61920FE7A9100194549 /* Cells.swift */; };
 		1E85075D20D8AED100204D79 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E85075C20D8AED100204D79 /* SignInViewController.swift */; };
 		1EA950EE20DDEAF800CCDADB /* CoreBluetooth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1EA950ED20DDEAF700CCDADB /* CoreBluetooth.framework */; };
-		1EC8962820E9D26A005EA43B /* Recorder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EC8962720E9D26A005EA43B /* Recorder.swift */; };
-		1EC8962C20E9D48A005EA43B /* VideoHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EC8962B20E9D48A005EA43B /* VideoHelper.swift */; };
+		1EB5DE8C20FD06E10088A41C /* Database.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 1EB5DE8A20FD06E10088A41C /* Database.xcdatamodeld */; };
+		1EB5DE9220FD14FF0088A41C /* PersistenceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EB5DE9120FD14FF0088A41C /* PersistenceManager.swift */; };
+		1EB5DE9820FD1EAF0088A41C /* LogTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EB5DE9720FD1EAF0088A41C /* LogTableViewCell.swift */; };
+		1EB5DE9B20FD29C70088A41C /* DriveSession+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EB5DE9920FD29C70088A41C /* DriveSession+CoreDataClass.swift */; };
+		1EB5DE9C20FD29C70088A41C /* DriveSession+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EB5DE9A20FD29C70088A41C /* DriveSession+CoreDataProperties.swift */; };
+		1EB5DE9E20FD3A6A0088A41C /* DriveSessionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EB5DE9D20FD3A6A0088A41C /* DriveSessionViewController.swift */; };
 		1EC8962E20EEA83C005EA43B /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EC8962D20EEA83C005EA43B /* Settings.swift */; };
+		1EC8963020F3D6FC005EA43B /* DataViewCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EC8962F20F3D6FC005EA43B /* DataViewCollectionViewCell.swift */; };
+		1EC8963220F672BB005EA43B /* DataRecording.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EC8963120F672BB005EA43B /* DataRecording.swift */; };
+		1EC8965520F6A8F2005EA43B /* LogViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EC8965420F6A8F2005EA43B /* LogViewController.swift */; };
 		3794948F20BB3146001E5D61 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3794948E20BB3146001E5D61 /* AppDelegate.swift */; };
 		3794949120BB3146001E5D61 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3794949020BB3146001E5D61 /* ViewController.swift */; };
 		3794949420BB3146001E5D61 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3794949220BB3146001E5D61 /* Main.storyboard */; };
@@ -67,11 +76,20 @@
 		1E30DBD420E33FE1009836EC /* GPS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GPS.swift; sourceTree = "<group>"; };
 		1E30DBD620E34003009836EC /* Bluetooth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bluetooth.swift; sourceTree = "<group>"; };
 		1E5FBCB520E37AF700CCDAE5 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		1E7FD61720FE749500194549 /* SpreadsheetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpreadsheetViewController.swift; sourceTree = "<group>"; };
+		1E7FD61920FE7A9100194549 /* Cells.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cells.swift; sourceTree = "<group>"; };
 		1E85075C20D8AED100204D79 /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
 		1EA950ED20DDEAF700CCDADB /* CoreBluetooth.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreBluetooth.framework; path = System/Library/Frameworks/CoreBluetooth.framework; sourceTree = SDKROOT; };
-		1EC8962720E9D26A005EA43B /* Recorder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Recorder.swift; sourceTree = "<group>"; };
-		1EC8962B20E9D48A005EA43B /* VideoHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoHelper.swift; sourceTree = "<group>"; };
+		1EB5DE8B20FD06E10088A41C /* Database.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Database.xcdatamodel; sourceTree = "<group>"; };
+		1EB5DE9120FD14FF0088A41C /* PersistenceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceManager.swift; sourceTree = "<group>"; };
+		1EB5DE9720FD1EAF0088A41C /* LogTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogTableViewCell.swift; sourceTree = "<group>"; };
+		1EB5DE9920FD29C70088A41C /* DriveSession+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DriveSession+CoreDataClass.swift"; sourceTree = "<group>"; };
+		1EB5DE9A20FD29C70088A41C /* DriveSession+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DriveSession+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		1EB5DE9D20FD3A6A0088A41C /* DriveSessionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DriveSessionViewController.swift; sourceTree = "<group>"; };
 		1EC8962D20EEA83C005EA43B /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
+		1EC8962F20F3D6FC005EA43B /* DataViewCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataViewCollectionViewCell.swift; sourceTree = "<group>"; };
+		1EC8963120F672BB005EA43B /* DataRecording.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataRecording.swift; sourceTree = "<group>"; };
+		1EC8965420F6A8F2005EA43B /* LogViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogViewController.swift; sourceTree = "<group>"; };
 		3794948B20BB3146001E5D61 /* vehsense.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = vehsense.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3794948E20BB3146001E5D61 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3794949020BB3146001E5D61 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -119,9 +137,10 @@
 				1E2C3BA020E4056E004304EB /* Accelerometer.swift */,
 				1E2C3BA220E410AE004304EB /* Magnetometer.swift */,
 				1E2C3BA420E4844A004304EB /* Setup.swift */,
-				1EC8962720E9D26A005EA43B /* Recorder.swift */,
-				1EC8962B20E9D48A005EA43B /* VideoHelper.swift */,
 				1EC8962D20EEA83C005EA43B /* Settings.swift */,
+				1EC8963120F672BB005EA43B /* DataRecording.swift */,
+				1EB5DE8A20FD06E10088A41C /* Database.xcdatamodeld */,
+				1EB5DE9120FD14FF0088A41C /* PersistenceManager.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -135,6 +154,9 @@
 				1E30DBCE20E07BBC009836EC /* BluetoothTableViewCell.swift */,
 				1E2C3BA620E4A85A004304EB /* GPSTableViewCell.swift */,
 				1E214B4120DC2E5700BCC96E /* SetupTableViewCell.swift */,
+				1EC8962F20F3D6FC005EA43B /* DataViewCollectionViewCell.swift */,
+				1EB5DE9720FD1EAF0088A41C /* LogTableViewCell.swift */,
+				1E7FD61920FE7A9100194549 /* Cells.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -150,6 +172,9 @@
 				1E214B3F20DC238800BCC96E /* SetupViewController.swift */,
 				1E30DBCA20E03E13009836EC /* SettingsViewController.swift */,
 				1E30DBD020E07CC3009836EC /* BluetoothViewController.swift */,
+				1EC8965420F6A8F2005EA43B /* LogViewController.swift */,
+				1EB5DE9D20FD3A6A0088A41C /* DriveSessionViewController.swift */,
+				1E7FD61720FE749500194549 /* SpreadsheetViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -177,6 +202,8 @@
 		3794948D20BB3146001E5D61 /* vehsense */ = {
 			isa = PBXGroup;
 			children = (
+				1EB5DE9920FD29C70088A41C /* DriveSession+CoreDataClass.swift */,
+				1EB5DE9A20FD29C70088A41C /* DriveSession+CoreDataProperties.swift */,
 				1E85076020D8AF6900204D79 /* Controller */,
 				1E85075F20D8AF6000204D79 /* View */,
 				1E85075E20D8AF5600204D79 /* Model */,
@@ -227,6 +254,7 @@
 				3794948720BB3146001E5D61 /* Sources */,
 				3794948820BB3146001E5D61 /* Frameworks */,
 				3794948920BB3146001E5D61 /* Resources */,
+				B029941DDCC20CA761CD4562 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -351,6 +379,24 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		B029941DDCC20CA761CD4562 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-vehsense/Pods-vehsense-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/SpreadsheetView/SpreadsheetView.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SpreadsheetView.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-vehsense/Pods-vehsense-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -359,27 +405,36 @@
 			buildActionMask = 2147483647;
 			files = (
 				1E85075D20D8AED100204D79 /* SignInViewController.swift in Sources */,
+				1EC8963220F672BB005EA43B /* DataRecording.swift in Sources */,
 				3794949120BB3146001E5D61 /* ViewController.swift in Sources */,
+				1EB5DE9C20FD29C70088A41C /* DriveSession+CoreDataProperties.swift in Sources */,
 				1E30DBD520E33FE1009836EC /* GPS.swift in Sources */,
 				1E30DBCD20E0418E009836EC /* SettingsTableViewCell.swift in Sources */,
 				1E214B3E20DC222800BCC96E /* DataViewController.swift in Sources */,
 				3794948F20BB3146001E5D61 /* AppDelegate.swift in Sources */,
 				1E2C3BA320E410AE004304EB /* Magnetometer.swift in Sources */,
-				1EC8962C20E9D48A005EA43B /* VideoHelper.swift in Sources */,
 				1E2C3BA520E4844A004304EB /* Setup.swift in Sources */,
 				1E214B4220DC2E5700BCC96E /* SetupTableViewCell.swift in Sources */,
+				1EB5DE8C20FD06E10088A41C /* Database.xcdatamodeld in Sources */,
 				1E30DBCF20E07BBC009836EC /* BluetoothTableViewCell.swift in Sources */,
+				1EC8963020F3D6FC005EA43B /* DataViewCollectionViewCell.swift in Sources */,
+				1EB5DE9820FD1EAF0088A41C /* LogTableViewCell.swift in Sources */,
+				1E7FD61820FE749500194549 /* SpreadsheetViewController.swift in Sources */,
 				1E30DBD120E07CC3009836EC /* BluetoothViewController.swift in Sources */,
+				1E7FD61A20FE7A9100194549 /* Cells.swift in Sources */,
 				1E2C3BA120E4056E004304EB /* Accelerometer.swift in Sources */,
+				1EB5DE9220FD14FF0088A41C /* PersistenceManager.swift in Sources */,
 				1E214B3C20D906B700BCC96E /* MapViewController.swift in Sources */,
+				1EC8965520F6A8F2005EA43B /* LogViewController.swift in Sources */,
 				1E214B4020DC238800BCC96E /* SetupViewController.swift in Sources */,
+				1EB5DE9E20FD3A6A0088A41C /* DriveSessionViewController.swift in Sources */,
 				1E2C3BA720E4A85A004304EB /* GPSTableViewCell.swift in Sources */,
-				1EC8962820E9D26A005EA43B /* Recorder.swift in Sources */,
 				1E5FBCB620E37AF700CCDAE5 /* Constants.swift in Sources */,
 				1E2C3B9F20E3F392004304EB /* Gyroscope.swift in Sources */,
 				1E30DBD720E34003009836EC /* Bluetooth.swift in Sources */,
 				1EC8962E20EEA83C005EA43B /* Settings.swift in Sources */,
 				1E30DBCB20E03E13009836EC /* SettingsViewController.swift in Sources */,
+				1EB5DE9B20FD29C70088A41C /* DriveSession+CoreDataClass.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -650,6 +705,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		1EB5DE8A20FD06E10088A41C /* Database.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				1EB5DE8B20FD06E10088A41C /* Database.xcdatamodel */,
+			);
+			currentVersion = 1EB5DE8B20FD06E10088A41C /* Database.xcdatamodel */;
+			path = Database.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 3794948320BB3146001E5D61 /* Project object */;
 }

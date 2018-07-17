@@ -13,113 +13,209 @@ import MobileCoreServices
 
 class DataViewController: UIViewController {
 
-    @IBOutlet weak var mphLabel: UILabel!
+
+    @IBOutlet weak var recordButton: UIBarButtonItem!
+    @IBOutlet weak var collectionView: UICollectionView!
     
-    @IBOutlet weak var bearingLabel: UILabel!
+    let iconArray = [#imageLiteral(resourceName: "mphIcon"),#imageLiteral(resourceName: "bearingIcon"),#imageLiteral(resourceName: "latitudeIcon"),#imageLiteral(resourceName: "longitudeIcon"),#imageLiteral(resourceName: "gyroscopeIcon"),#imageLiteral(resourceName: "accIcon"),#imageLiteral(resourceName: "magnitudeIcon")]
     
-    @IBOutlet weak var latitudeLabel: UILabel!
-    @IBOutlet weak var longitudeLabel: UILabel!
+    var currentMPH = "0.0"
+    var currentBearing = "---"
+    var currentLat = "---"
+    var currentLong = "---"
     
-    @IBOutlet weak var gyroXLabel: UILabel!
-    @IBOutlet weak var gyroYLabel: UILabel!
-    @IBOutlet weak var gyroZLabel: UILabel!
+    var currentGyroX = "x:"
+    var currentGyroY = "y:"
+    var currentGyroZ = "z:"
     
-    @IBOutlet weak var accXLabel: UILabel!
-    @IBOutlet weak var accYLabel: UILabel!
-    @IBOutlet weak var accZLabel: UILabel!
+    var currentAccX = "x:"
+    var currentAccY = "y:"
+    var currentAccZ = "z:"
     
-    @IBOutlet weak var magXLabel: UILabel!
-    @IBOutlet weak var magYLabel: UILabel!
-    @IBOutlet weak var magZLabel: UILabel!
+    var currentMagX = "x:"
+    var currentMagY = "y:"
+    var currentMagZ = "z:"
+
     
     override func viewDidLoad()
     {
         super.viewDidLoad()
         
+        collectionView.dataSource = self
+        collectionView.delegate = self
+        
         // Do any additional setup after loading the view.
         NotificationCenter.default.addObserver(self, selector: #selector(DataViewController.updateCoordinates(notification:)), name: Notification.Name.init(gpsNotification), object: nil)
         
         NotificationCenter.default.addObserver(self, selector: #selector(DataViewController.updateGyroscope(notification:)), name: Notification.Name.init(gyroscopeNotification), object: nil)
-        
+
         NotificationCenter.default.addObserver(self, selector: #selector(DataViewController.updateAccelerometer(notification:)), name: Notification.Name.init(accelerometerNotification), object: nil)
-        
+
         NotificationCenter.default.addObserver(self, selector: #selector(DataViewController.updateMagnetometer(notification:)), name: Notification.Name.init(magnetometerNotification), object: nil)
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        if !Settings.shared.gpsState || !GPS.shared.isAuth(){
-            latitudeLabel.text = "---"
-            longitudeLabel.text = "---"
-            bearingLabel.text = "---"
-            mphLabel.text = "0.0"
-            
-        }
-        
-        if !Setup.shared.accSelectedState{
-            accXLabel.text = "x:"
-            accYLabel.text = "y:"
-            accZLabel.text = "z:"
-        }
-        
-        if !Setup.shared.magSelectedState{
-            magXLabel.text = "x:"
-            magYLabel.text = "y:"
-            magZLabel.text = "z:"
-        }
-        
-        if !Setup.shared.gyroSelectedState{
-            gyroXLabel.text = "x:"
-            gyroYLabel.text = "y:"
-            gyroZLabel.text = "z:"
-        }
         
     }
+        
+
     
     @objc func updateCoordinates(notification : Notification)
     {
         guard let location = notification.userInfo?["location"] as? CLLocation else { return }
-        latitudeLabel.text = String(location.coordinate.latitude)
-        longitudeLabel.text = String(location.coordinate.longitude)
         
-        bearingLabel.text = String(location.course)
+        let rawSpeed = Double(location.speed)
+        let rawLat = Double(location.coordinate.latitude)
+        let rawLong = Double(location.coordinate.longitude)
+        let rawBearing = Double(location.course)
         
-        var currentSpeed = location.speed
-        currentSpeed = currentSpeed < 0 ? 0 : currentSpeed * 2.23694
-        mphLabel.text = String(format: "%.1f", currentSpeed)
+        currentLat = String(rawLat)
+        currentLong = String(rawLong)
+        currentBearing = String(rawBearing)
+        
+        let rawMPH = rawSpeed < 0 ? 0 : rawSpeed * 2.23694
+        currentMPH  = String(format: "%.1f", rawMPH)
+        
+        collectionView.reloadData()
     }
     
     @objc func updateGyroscope(notification : Notification)
     {
         guard let gyroData = notification.userInfo?["gyroData"] as? CMGyroData else { return }
-        gyroXLabel.text = "x: \(gyroData.rotationRate.x )"
-        gyroYLabel.text = "y: \(gyroData.rotationRate.y )"
-        gyroZLabel.text = "z: \(gyroData.rotationRate.z )"
+        currentGyroX = "x: \(gyroData.rotationRate.x )"
+        currentGyroY = "y: \(gyroData.rotationRate.y )"
+        currentGyroZ = "z: \(gyroData.rotationRate.z )"
+        
+        collectionView.reloadData()
     }
-    
+
     @objc func updateAccelerometer(notification : Notification)
     {
         guard let accData = notification.userInfo?["accData"] as? CMAccelerometerData else { return }
+
+        currentAccX = "x: \(accData.acceleration.x)"
+        currentAccY = "y: \(accData.acceleration.y)"
+        currentAccZ = "z: \(accData.acceleration.z)"
         
-        accXLabel.text = "x: \(accData.acceleration.x)"
-        accYLabel.text = "y: \(accData.acceleration.y)"
-        accZLabel.text = "z: \(accData.acceleration.z)"
+        collectionView.reloadData()
     }
-    
+
     @objc func updateMagnetometer(notification : Notification)
     {
         guard let magData = notification.userInfo?["magData"] as? CMMagnetometerData else { return }
+
+        currentMagX = "x: \(magData.magneticField.x)"
+        currentMagY = "y: \(magData.magneticField.y)"
+        currentMagZ = "z: \(magData.magneticField.z)"
         
-        magXLabel.text = "x: \(magData.magneticField.x)"
-        magYLabel.text = "y: \(magData.magneticField.y)"
-        magZLabel.text = "z: \(magData.magneticField.z)"
+        collectionView.reloadData()
     }
     
-    @IBAction func viewRecordPressed(_ sender: UIButton) {
-        VideoHelper.startMediaBrowser(delegate: self, sourceType: .camera)
 
+    @IBAction func recordButtonPressed(_ sender: UIBarButtonItem) {
+        
+        if DataRecording.shared.recordingState{
+            sender.title = "Start Recording"
+            sender.tintColor = .green
+            DataRecording.shared.stopRecording()
+            
+        } else{
+            if !Setup.shared.stateList().contains(true) && !Settings.shared.gpsState{
+                let alertController = UIAlertController(title: NSLocalizedString("Enable setup or GPS to start recording", comment: ""), message: NSLocalizedString("", comment: ""), preferredStyle: .alert)
+                
+                let cancelAction = UIAlertAction(title: NSLocalizedString("Ok", comment: ""), style: .cancel, handler: nil)
+                alertController.addAction(cancelAction)
+                
+                self.present(alertController, animated: true, completion: nil)
+            }
+                
+            else{
+                DataRecording.shared.startRecording()
+                sender.title = "Stop Recording"
+                sender.tintColor = .red
+            }
+            
+        }
+        
+    }
+}
+
+
+extension DataViewController : UICollectionViewDataSource{
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return iconArray.count
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "collectionCell", for: indexPath) as! DataViewCollectionViewCell
+        
+        cell.image.image = iconArray[indexPath.row]
+        
+        if !Settings.shared.gpsState || !GPS.shared.isAuth(){
+            currentLat = "---"
+            currentLong = "---"
+            currentBearing = "---"
+            currentMPH = "0.0"
+        }
+        
+        switch indexPath.row {
+        case 0:
+            cell.titleLabel.text = "MPH"
+            cell.descriptionLabel.text = currentMPH
+        case 1:
+            cell.titleLabel.text = "BEARING"
+            cell.descriptionLabel.text = currentBearing
+        case 2:
+            cell.titleLabel.text = "LATITUDE"
+            cell.descriptionLabel.text = currentLat
+        case 3:
+            cell.titleLabel.text = "LONGITUDE"
+            cell.descriptionLabel.text = currentLong
+        case 4:
+            if !Setup.shared.gyroSelectedState{
+                currentGyroX = "x:"
+                currentGyroY = "y:"
+                currentGyroZ = "z:"
+            }
+            cell.titleLabel.text = "GYROSCOPE"
+            cell.descriptionLabel.text = currentGyroX
+            cell.descriptionLabel2.text = currentGyroY
+            cell.descriptionLabel3.text = currentGyroZ
+            
+        case 5:
+            if !Setup.shared.accSelectedState{
+                currentAccX = "x:"
+                currentAccY = "y:"
+                currentAccZ = "z:"
+            }
+            cell.titleLabel.text = "ACCELEROMETER"
+            cell.descriptionLabel.text = currentAccX
+            cell.descriptionLabel2.text = currentAccY
+            cell.descriptionLabel3.text = currentAccZ
+            
+        case 6:
+            if !Setup.shared.magSelectedState{
+                currentMagX = "x:"
+                currentMagY = "y:"
+                currentMagZ = "z:"
+            }
+            cell.titleLabel.text = "MAGNETOMETER"
+            cell.descriptionLabel.text = currentMagX
+            cell.descriptionLabel2.text = currentMagY
+            cell.descriptionLabel3.text = currentMagZ
+        
+        default:
+            break
+        }
+
+        
+        return cell
     }
     
 }
+
+extension DataViewController : UICollectionViewDelegate{
+    
+}
+
 
 extension DataViewController: UIImagePickerControllerDelegate {
 }

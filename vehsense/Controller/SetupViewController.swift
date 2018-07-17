@@ -10,11 +10,9 @@
 import UIKit
 
 
-
-
 class SetupViewController: UIViewController, UITableViewDelegate{
     
-    let options = ["Accelerometer", "Magnetometer", "Gyroscope","Record","OBD"]
+    let options = ["Accelerometer", "Magnetometer", "Gyroscope","Video","OBD"]
     
     @IBOutlet weak var setupTableView: UITableView!
     
