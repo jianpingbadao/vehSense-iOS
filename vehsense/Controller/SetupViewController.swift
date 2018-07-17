@@ -23,8 +23,8 @@ class SetupViewController: UIViewController, UITableViewDelegate{
         setupTableView.dataSource = self
     }
     
-    override func viewDidDisappear(_ animated: Bool) {
-        
+    override func viewWillDisappear(_ animated: Bool) {
+    
         if Accelerometer.shared.isOn{
             if Setup.shared.accSelectedState == false{
                 Accelerometer.shared.stopAccelerometer()
@@ -66,11 +66,6 @@ class SetupViewController: UIViewController, UITableViewDelegate{
                 Gyroscope.shared.isOn = true
             }
         }
-        
-        
-        
-        
-        
     }
     
     @objc func switchAction(sender : UISwitch){

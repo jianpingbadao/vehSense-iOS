@@ -38,6 +38,10 @@ class MapViewController: UIViewController {
         }
     }
     
+    deinit {
+        NotificationCenter.default.removeObserver(self)
+    }
+    
     
     @objc func updateLocation(notification : Notification){
         guard let location = notification.userInfo?["location"] as? CLLocation else { return }

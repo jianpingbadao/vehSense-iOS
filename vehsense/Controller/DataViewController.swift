@@ -54,8 +54,11 @@ class DataViewController: UIViewController {
         NotificationCenter.default.addObserver(self, selector: #selector(DataViewController.updateMagnetometer(notification:)), name: Notification.Name.init(magnetometerNotification), object: nil)
         
     }
-        
-
+    
+    deinit {
+        NotificationCenter.default.removeObserver(self)
+    }
+    
     
     @objc func updateCoordinates(notification : Notification)
     {

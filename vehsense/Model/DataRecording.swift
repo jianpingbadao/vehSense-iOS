@@ -154,6 +154,27 @@ class DataRecording{
         
         driveSession.sessionStartTime = startTime
         driveSession.sessionEndTime = endTime
+        
+        mphList.removeAll()
+        latList.removeAll()
+        longList.removeAll()
+        bearingList.removeAll()
+        locationTimeList.removeAll()
+        
+        gyroXList.removeAll()
+        gyroYList.removeAll()
+        gyroZList.removeAll()
+        gyroTimeList.removeAll()
+
+        magXList.removeAll()
+        magYList.removeAll()
+        magZList.removeAll()
+        magTimeList.removeAll()
+        
+        accXList.removeAll()
+        accYList.removeAll()
+        accZList.removeAll()
+        accTimeList.removeAll()
 
         PersistenceManager.shared.saveContext()
         
