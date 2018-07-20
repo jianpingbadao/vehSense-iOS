@@ -13,9 +13,9 @@ import MobileCoreServices
 
 class DataViewController: UIViewController {
 
-
     @IBOutlet weak var recordButton: UIBarButtonItem!
     @IBOutlet weak var collectionView: UICollectionView!
+    @IBOutlet weak var setupButton: UIBarButtonItem!
     
     let iconArray = [#imageLiteral(resourceName: "mphIcon"),#imageLiteral(resourceName: "bearingIcon"),#imageLiteral(resourceName: "latitudeIcon"),#imageLiteral(resourceName: "longitudeIcon"),#imageLiteral(resourceName: "gyroscopeIcon"),#imageLiteral(resourceName: "accIcon"),#imageLiteral(resourceName: "magnitudeIcon")]
     
@@ -117,7 +117,13 @@ class DataViewController: UIViewController {
         if DataRecording.shared.recordingState{
             sender.title = "Start Recording"
             sender.tintColor = .green
+            setupButton.tintColor = nil
+            setupButton.isEnabled = true
             DataRecording.shared.stopRecording()
+            
+            GPS.shared.isRecording = false
+            
+            UIApplication.shared.isIdleTimerDisabled = false
             
         } else{
             if !Setup.shared.stateList().contains(true) && !Settings.shared.gpsState{
@@ -133,6 +139,13 @@ class DataViewController: UIViewController {
                 DataRecording.shared.startRecording()
                 sender.title = "Stop Recording"
                 sender.tintColor = .red
+                setupButton.tintColor = .gray
+                setupButton.isEnabled = false
+                
+                GPS.shared.isRecording = true
+                
+                UIApplication.shared.isIdleTimerDisabled = true
+                
             }
             
         }

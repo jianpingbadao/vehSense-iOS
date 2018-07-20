@@ -14,6 +14,7 @@ class GPS : NSObject , CLLocationManagerDelegate {
     static let shared = GPS()
     
     var isOn = false
+    var isRecording = false
 
     let locationManager = CLLocationManager()
     

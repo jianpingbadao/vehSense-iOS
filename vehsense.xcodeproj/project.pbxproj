@@ -127,20 +127,104 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		1E85075E20D8AF5600204D79 /* Model */ = {
+		1E7FD66621001AEF00194549 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				1E30DBCC20E0418E009836EC /* SettingsTableViewCell.swift */,
+				1E30DBCE20E07BBC009836EC /* BluetoothTableViewCell.swift */,
+				1E2C3BA620E4A85A004304EB /* GPSTableViewCell.swift */,
+				1EC8962F20F3D6FC005EA43B /* DataViewCollectionViewCell.swift */,
+				1E214B4120DC2E5700BCC96E /* SetupTableViewCell.swift */,
+				1EB5DE9720FD1EAF0088A41C /* LogTableViewCell.swift */,
+				1E7FD61920FE7A9100194549 /* Cells.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		1E7FD66721001B3A00194549 /* Log */ = {
+			isa = PBXGroup;
+			children = (
+				1EC8965420F6A8F2005EA43B /* LogViewController.swift */,
+				1EB5DE9D20FD3A6A0088A41C /* DriveSessionViewController.swift */,
+				1E7FD61720FE749500194549 /* SpreadsheetViewController.swift */,
+			);
+			path = Log;
+			sourceTree = "<group>";
+		};
+		1E7FD66821001B5700194549 /* Data Collection */ = {
+			isa = PBXGroup;
+			children = (
+				1E214B3D20DC222800BCC96E /* DataViewController.swift */,
+				1E214B3F20DC238800BCC96E /* SetupViewController.swift */,
+			);
+			path = "Data Collection";
+			sourceTree = "<group>";
+		};
+		1E7FD66921001B7600194549 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				1E30DBCA20E03E13009836EC /* SettingsViewController.swift */,
+				1E30DBD020E07CC3009836EC /* BluetoothViewController.swift */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
+		1E7FD66A21001B9400194549 /* Map */ = {
+			isa = PBXGroup;
+			children = (
+				1E214B3B20D906B700BCC96E /* MapViewController.swift */,
+			);
+			path = Map;
+			sourceTree = "<group>";
+		};
+		1E7FD66B21001BA900194549 /* Startup */ = {
+			isa = PBXGroup;
+			children = (
+				1E85075C20D8AED100204D79 /* SignInViewController.swift */,
+				3794949020BB3146001E5D61 /* ViewController.swift */,
+				3794948E20BB3146001E5D61 /* AppDelegate.swift */,
+			);
+			path = Startup;
+			sourceTree = "<group>";
+		};
+		1E7FD66C21001BD100194549 /* Setup */ = {
+			isa = PBXGroup;
+			children = (
+				1E2C3BA420E4844A004304EB /* Setup.swift */,
+				1E2C3BA020E4056E004304EB /* Accelerometer.swift */,
+				1E2C3B9E20E3F392004304EB /* Gyroscope.swift */,
+				1E2C3BA220E410AE004304EB /* Magnetometer.swift */,
+			);
+			path = Setup;
+			sourceTree = "<group>";
+		};
+		1E7FD66D21001BFD00194549 /* Storage */ = {
+			isa = PBXGroup;
+			children = (
+				1EC8963120F672BB005EA43B /* DataRecording.swift */,
+				1EB5DE9120FD14FF0088A41C /* PersistenceManager.swift */,
+				1EB5DE8A20FD06E10088A41C /* Database.xcdatamodeld */,
+			);
+			path = Storage;
+			sourceTree = "<group>";
+		};
+		1E7FD66E21001C1A00194549 /* Settings */ = {
 			isa = PBXGroup;
 			children = (
 				1E30DBD420E33FE1009836EC /* GPS.swift */,
-				1E30DBD620E34003009836EC /* Bluetooth.swift */,
-				1E5FBCB520E37AF700CCDAE5 /* Constants.swift */,
-				1E2C3B9E20E3F392004304EB /* Gyroscope.swift */,
-				1E2C3BA020E4056E004304EB /* Accelerometer.swift */,
-				1E2C3BA220E410AE004304EB /* Magnetometer.swift */,
-				1E2C3BA420E4844A004304EB /* Setup.swift */,
 				1EC8962D20EEA83C005EA43B /* Settings.swift */,
-				1EC8963120F672BB005EA43B /* DataRecording.swift */,
-				1EB5DE8A20FD06E10088A41C /* Database.xcdatamodeld */,
-				1EB5DE9120FD14FF0088A41C /* PersistenceManager.swift */,
+				1E30DBD620E34003009836EC /* Bluetooth.swift */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
+		1E85075E20D8AF5600204D79 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				1E7FD66E21001C1A00194549 /* Settings */,
+				1E7FD66D21001BFD00194549 /* Storage */,
+				1E7FD66C21001BD100194549 /* Setup */,
+				1E5FBCB520E37AF700CCDAE5 /* Constants.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -148,15 +232,9 @@
 		1E85075F20D8AF6000204D79 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				1E7FD66621001AEF00194549 /* Cells */,
 				3794949220BB3146001E5D61 /* Main.storyboard */,
 				3794949720BB3147001E5D61 /* LaunchScreen.storyboard */,
-				1E30DBCC20E0418E009836EC /* SettingsTableViewCell.swift */,
-				1E30DBCE20E07BBC009836EC /* BluetoothTableViewCell.swift */,
-				1E2C3BA620E4A85A004304EB /* GPSTableViewCell.swift */,
-				1E214B4120DC2E5700BCC96E /* SetupTableViewCell.swift */,
-				1EC8962F20F3D6FC005EA43B /* DataViewCollectionViewCell.swift */,
-				1EB5DE9720FD1EAF0088A41C /* LogTableViewCell.swift */,
-				1E7FD61920FE7A9100194549 /* Cells.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -164,17 +242,11 @@
 		1E85076020D8AF6900204D79 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				3794948E20BB3146001E5D61 /* AppDelegate.swift */,
-				3794949020BB3146001E5D61 /* ViewController.swift */,
-				1E85075C20D8AED100204D79 /* SignInViewController.swift */,
-				1E214B3B20D906B700BCC96E /* MapViewController.swift */,
-				1E214B3D20DC222800BCC96E /* DataViewController.swift */,
-				1E214B3F20DC238800BCC96E /* SetupViewController.swift */,
-				1E30DBCA20E03E13009836EC /* SettingsViewController.swift */,
-				1E30DBD020E07CC3009836EC /* BluetoothViewController.swift */,
-				1EC8965420F6A8F2005EA43B /* LogViewController.swift */,
-				1EB5DE9D20FD3A6A0088A41C /* DriveSessionViewController.swift */,
-				1E7FD61720FE749500194549 /* SpreadsheetViewController.swift */,
+				1E7FD66B21001BA900194549 /* Startup */,
+				1E7FD66921001B7600194549 /* Settings */,
+				1E7FD66821001B5700194549 /* Data Collection */,
+				1E7FD66721001B3A00194549 /* Log */,
+				1E7FD66A21001B9400194549 /* Map */,
 			);
 			path = Controller;
 			sourceTree = "<group>";

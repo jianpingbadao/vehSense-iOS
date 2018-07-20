@@ -35,6 +35,10 @@ class SettingsViewController: UIViewController, UITableViewDelegate {
         }
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        settingsTableView.reloadData()
+    }
+    
     override func viewDidDisappear(_ animated: Bool)
     {
         if Settings.shared.gpsState == true{
@@ -93,6 +97,11 @@ extension SettingsViewController : UITableViewDataSource{
             
             gpsSwitch = cell.gpsSwitch
             cell.gpsSwitch.isOn = Settings.shared.gpsState
+            
+            if GPS.shared.isRecording{
+                cell.gpsSwitch.isEnabled = false
+            } else { cell.gpsSwitch.isEnabled = true }
+            
             
             cell.gpsSwitch.addTarget(self, action: #selector(switchAction(sender:)), for: .valueChanged)
             return cell
