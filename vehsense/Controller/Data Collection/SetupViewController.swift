@@ -23,50 +23,6 @@ class SetupViewController: UIViewController, UITableViewDelegate{
         setupTableView.dataSource = self
     }
     
-    override func viewWillDisappear(_ animated: Bool) {
-    
-        if Accelerometer.shared.isOn{
-            if Setup.shared.accSelectedState == false{
-                Accelerometer.shared.stopAccelerometer()
-                Accelerometer.shared.isOn = false
-            }
-        }
-        
-        else if !Accelerometer.shared.isOn{
-            if Setup.shared.accSelectedState == true{
-                Accelerometer.shared.startAccelerometer()
-                Accelerometer.shared.isOn = true
-            }
-        }
-        
-        if Magnetometer.shared.isOn{
-            if Setup.shared.magSelectedState == false{
-                Magnetometer.shared.stopMagnetometer()
-                Magnetometer.shared.isOn = false
-            }
-        }
-            
-        else if !Magnetometer.shared.isOn{
-            if Setup.shared.magSelectedState == true{
-                Magnetometer.shared.startMagnetometer()
-                Magnetometer.shared.isOn = true
-            }
-        }
-        
-        if Gyroscope.shared.isOn{
-            if Setup.shared.gyroSelectedState == false{
-                Gyroscope.shared.stopGyroscope()
-                Gyroscope.shared.isOn = false
-            }
-        }
-            
-        else if !Gyroscope.shared.isOn{
-            if Setup.shared.gyroSelectedState == true{
-                Gyroscope.shared.startGyroscope()
-                Gyroscope.shared.isOn = true
-            }
-        }
-    }
     
     @objc func switchAction(sender : UISwitch){
         switch sender.tag {
@@ -83,6 +39,51 @@ class SetupViewController: UIViewController, UITableViewDelegate{
             Setup.shared.obdSelectedState = !Setup.shared.obdSelectedState
         default:
             break
+        }
+        updateSetup()
+    }
+}
+
+func updateSetup(){
+    if Accelerometer.shared.isOn{
+        if Setup.shared.accSelectedState == false{
+            Accelerometer.shared.stopAccelerometer()
+            Accelerometer.shared.isOn = false
+        }
+    }
+        
+    else if !Accelerometer.shared.isOn{
+        if Setup.shared.accSelectedState == true{
+            Accelerometer.shared.startAccelerometer()
+            Accelerometer.shared.isOn = true
+        }
+    }
+    
+    if Magnetometer.shared.isOn{
+        if Setup.shared.magSelectedState == false{
+            Magnetometer.shared.stopMagnetometer()
+            Magnetometer.shared.isOn = false
+        }
+    }
+        
+    else if !Magnetometer.shared.isOn{
+        if Setup.shared.magSelectedState == true{
+            Magnetometer.shared.startMagnetometer()
+            Magnetometer.shared.isOn = true
+        }
+    }
+    
+    if Gyroscope.shared.isOn{
+        if Setup.shared.gyroSelectedState == false{
+            Gyroscope.shared.stopGyroscope()
+            Gyroscope.shared.isOn = false
+        }
+    }
+        
+    else if !Gyroscope.shared.isOn{
+        if Setup.shared.gyroSelectedState == true{
+            Gyroscope.shared.startGyroscope()
+            Gyroscope.shared.isOn = true
         }
     }
 }

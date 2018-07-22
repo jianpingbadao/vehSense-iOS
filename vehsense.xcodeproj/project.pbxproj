@@ -35,7 +35,6 @@
 		1EB5DE9C20FD29C70088A41C /* DriveSession+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EB5DE9A20FD29C70088A41C /* DriveSession+CoreDataProperties.swift */; };
 		1EB5DE9E20FD3A6A0088A41C /* DriveSessionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EB5DE9D20FD3A6A0088A41C /* DriveSessionViewController.swift */; };
 		1EC8962E20EEA83C005EA43B /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EC8962D20EEA83C005EA43B /* Settings.swift */; };
-		1EC8963020F3D6FC005EA43B /* DataViewCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EC8962F20F3D6FC005EA43B /* DataViewCollectionViewCell.swift */; };
 		1EC8963220F672BB005EA43B /* DataRecording.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EC8963120F672BB005EA43B /* DataRecording.swift */; };
 		1EC8965520F6A8F2005EA43B /* LogViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EC8965420F6A8F2005EA43B /* LogViewController.swift */; };
 		3794948F20BB3146001E5D61 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3794948E20BB3146001E5D61 /* AppDelegate.swift */; };
@@ -87,7 +86,6 @@
 		1EB5DE9A20FD29C70088A41C /* DriveSession+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DriveSession+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		1EB5DE9D20FD3A6A0088A41C /* DriveSessionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DriveSessionViewController.swift; sourceTree = "<group>"; };
 		1EC8962D20EEA83C005EA43B /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
-		1EC8962F20F3D6FC005EA43B /* DataViewCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataViewCollectionViewCell.swift; sourceTree = "<group>"; };
 		1EC8963120F672BB005EA43B /* DataRecording.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataRecording.swift; sourceTree = "<group>"; };
 		1EC8965420F6A8F2005EA43B /* LogViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogViewController.swift; sourceTree = "<group>"; };
 		3794948B20BB3146001E5D61 /* vehsense.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = vehsense.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -133,7 +131,6 @@
 				1E30DBCC20E0418E009836EC /* SettingsTableViewCell.swift */,
 				1E30DBCE20E07BBC009836EC /* BluetoothTableViewCell.swift */,
 				1E2C3BA620E4A85A004304EB /* GPSTableViewCell.swift */,
-				1EC8962F20F3D6FC005EA43B /* DataViewCollectionViewCell.swift */,
 				1E214B4120DC2E5700BCC96E /* SetupTableViewCell.swift */,
 				1EB5DE9720FD1EAF0088A41C /* LogTableViewCell.swift */,
 				1E7FD61920FE7A9100194549 /* Cells.swift */,
@@ -368,6 +365,11 @@
 				TargetAttributes = {
 					3794948A20BB3146001E5D61 = {
 						CreatedOnToolsVersion = 9.3.1;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+						};
 					};
 					3794949E20BB3147001E5D61 = {
 						CreatedOnToolsVersion = 9.3.1;
@@ -489,7 +491,6 @@
 				1E214B4220DC2E5700BCC96E /* SetupTableViewCell.swift in Sources */,
 				1EB5DE8C20FD06E10088A41C /* Database.xcdatamodeld in Sources */,
 				1E30DBCF20E07BBC009836EC /* BluetoothTableViewCell.swift in Sources */,
-				1EC8963020F3D6FC005EA43B /* DataViewCollectionViewCell.swift in Sources */,
 				1EB5DE9820FD1EAF0088A41C /* LogTableViewCell.swift in Sources */,
 				1E7FD61820FE749500194549 /* SpreadsheetViewController.swift in Sources */,
 				1E30DBD120E07CC3009836EC /* BluetoothViewController.swift in Sources */,

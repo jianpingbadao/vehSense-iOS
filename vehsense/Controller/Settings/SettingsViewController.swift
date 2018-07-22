@@ -39,16 +39,6 @@ class SettingsViewController: UIViewController, UITableViewDelegate {
         settingsTableView.reloadData()
     }
     
-    override func viewDidDisappear(_ animated: Bool)
-    {
-        if Settings.shared.gpsState == true{
-            GPS.shared.turnOn()
-        }
-            
-        else if Settings.shared.gpsState == false{
-            GPS.shared.turnOff()
-        }
-    }
     
     @objc func switchAction(sender : UISwitch)
     {
@@ -71,11 +61,22 @@ class SettingsViewController: UIViewController, UITableViewDelegate {
         else{ Settings.shared.gpsState = !Settings.shared.gpsState
             
         }
+        
+        updateSettings()
+    }
+    
+    func updateSettings(){
+        if Settings.shared.gpsState == true{
+            GPS.shared.turnOn()
+        }
+            
+        else if Settings.shared.gpsState == false{
+            gpsIsOff()
+        }
     }
     
     func gpsIsOff(){
         Settings.shared.gpsState = false
-        gpsSwitch.isOn = false
         GPS.shared.turnOff()
     }
     

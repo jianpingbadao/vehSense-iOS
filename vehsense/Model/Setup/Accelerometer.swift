@@ -20,7 +20,6 @@ class Accelerometer{
     let notificationName = Notification.Name.init(accelerometerNotification)
     
     private init(){
-        
         motionManager.accelerometerUpdateInterval = 0.2
         
     }

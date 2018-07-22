@@ -39,7 +39,7 @@ extension SpreadsheetViewController : SpreadsheetViewDataSource{
     }
     
     func spreadsheetView(_ spreadsheetView: SpreadsheetView, widthForColumn column: Int) -> CGFloat {
-        return 80
+        return 90
     }
     
     func spreadsheetView(_ spreadsheetView: SpreadsheetView, heightForRow row: Int) -> CGFloat {
@@ -47,7 +47,6 @@ extension SpreadsheetViewController : SpreadsheetViewDataSource{
     }
     
     func spreadsheetView(_ spreadsheetView: SpreadsheetView, cellForItemAt indexPath: IndexPath) -> Cell? {
-        print(header)
         if case 0 = indexPath.row {
             let cell = spreadsheetView.dequeueReusableCell(withReuseIdentifier: String(describing: HeaderCell.self), for: indexPath) as! HeaderCell
             cell.label.text = header[indexPath.column]

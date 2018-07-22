@@ -25,6 +25,7 @@ class GPS : NSObject , CLLocationManagerDelegate {
         
         locationManager.requestAlwaysAuthorization()
         locationManager.delegate = self
+        locationManager.allowsBackgroundLocationUpdates = true
         locationManager.desiredAccuracy = kCLLocationAccuracyBestForNavigation
     }
     
@@ -59,6 +60,7 @@ class GPS : NSObject , CLLocationManagerDelegate {
         guard let location = locations.first else {return}
         let data = ["location": location]
         NotificationCenter.default.post(name: notificationName, object: nil, userInfo: data)
+        
         
     }
     
