@@ -130,13 +130,26 @@ class DataViewController: UIViewController {
     @IBAction func recordButtonPressed(_ sender: UIBarButtonItem) {
         
         if DataRecording.shared.recordingState{
+            
+            DataRecording.shared.stopRecording()
+            GPS.shared.isRecording = false
+            
             sender.title = "Start Recording"
             sender.tintColor = .green
             setupButton.tintColor = nil
             setupButton.isEnabled = true
-            DataRecording.shared.stopRecording()
             
-            GPS.shared.isRecording = false
+            let alert = UIAlertController(title: "Save", message: "Save or discard this recording.", preferredStyle: UIAlertControllerStyle.alert)
+            
+            alert.addAction(UIAlertAction(title: "save", style: UIAlertActionStyle.default, handler: { (action: UIAlertAction!) in
+                DataRecording.shared.save()
+            }))
+            
+            alert.addAction(UIAlertAction(title: "discard", style: UIAlertActionStyle.default, handler: { (action: UIAlertAction!) in
+                DataRecording.shared.clearLists()
+            }))
+            
+            self.present(alert, animated: true, completion: nil)
             
             UIApplication.shared.isIdleTimerDisabled = false
             

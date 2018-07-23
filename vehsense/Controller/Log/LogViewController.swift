@@ -48,7 +48,16 @@ class LogViewController: UIViewController {
 
 
 extension LogViewController : UITableViewDelegate{
-    
+    func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
+        let delete = UITableViewRowAction(style: .destructive, title: "delete") { (action, indexPath) in
+            // delete item at indexPath
+            let session = self.sessionList[indexPath.row]
+            PersistenceManager.shared.deleteSession(session: session)
+            self.sessionList.remove(at: indexPath.row)
+            tableView.reloadData()
+        }
+        return [delete]
+    }
 }
 
 extension LogViewController : UITableViewDataSource{

@@ -26,7 +26,6 @@ class SetupViewController: UIViewController, UITableViewDelegate{
     
     @objc func switchAction(sender : UISwitch){
         switch sender.tag {
-            
         case 0:
             Setup.shared.accSelectedState = !Setup.shared.accSelectedState
         case 1:
@@ -101,6 +100,10 @@ extension SetupViewController : UITableViewDataSource{
         cell.optionSwitch.setOn(Setup.shared.stateList()[indexPath.row], animated: true)
         cell.optionSwitch.addTarget(self, action: #selector(switchAction(sender:)), for: .valueChanged)
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: false)
     }
     
 }

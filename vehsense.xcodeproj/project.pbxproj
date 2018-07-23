@@ -27,12 +27,20 @@
 		1E7FD61820FE749500194549 /* SpreadsheetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E7FD61720FE749500194549 /* SpreadsheetViewController.swift */; };
 		1E7FD61A20FE7A9100194549 /* Cells.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E7FD61920FE7A9100194549 /* Cells.swift */; };
 		1E85075D20D8AED100204D79 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E85075C20D8AED100204D79 /* SignInViewController.swift */; };
+		1E92AC6F21056A5500A313BF /* AccEntity+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E92AC6521056A5500A313BF /* AccEntity+CoreDataClass.swift */; };
+		1E92AC7021056A5500A313BF /* AccEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E92AC6621056A5500A313BF /* AccEntity+CoreDataProperties.swift */; };
+		1E92AC7121056A5500A313BF /* DriveSession+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E92AC6721056A5500A313BF /* DriveSession+CoreDataClass.swift */; };
+		1E92AC7221056A5500A313BF /* DriveSession+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E92AC6821056A5500A313BF /* DriveSession+CoreDataProperties.swift */; };
+		1E92AC7321056A5500A313BF /* GyroEntity+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E92AC6921056A5500A313BF /* GyroEntity+CoreDataClass.swift */; };
+		1E92AC7421056A5500A313BF /* GyroEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E92AC6A21056A5500A313BF /* GyroEntity+CoreDataProperties.swift */; };
+		1E92AC7521056A5500A313BF /* LocationEntity+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E92AC6B21056A5500A313BF /* LocationEntity+CoreDataClass.swift */; };
+		1E92AC7621056A5500A313BF /* LocationEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E92AC6C21056A5500A313BF /* LocationEntity+CoreDataProperties.swift */; };
+		1E92AC7721056A5500A313BF /* MagEntity+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E92AC6D21056A5500A313BF /* MagEntity+CoreDataClass.swift */; };
+		1E92AC7821056A5500A313BF /* MagEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E92AC6E21056A5500A313BF /* MagEntity+CoreDataProperties.swift */; };
 		1EA950EE20DDEAF800CCDADB /* CoreBluetooth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1EA950ED20DDEAF700CCDADB /* CoreBluetooth.framework */; };
 		1EB5DE8C20FD06E10088A41C /* Database.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 1EB5DE8A20FD06E10088A41C /* Database.xcdatamodeld */; };
 		1EB5DE9220FD14FF0088A41C /* PersistenceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EB5DE9120FD14FF0088A41C /* PersistenceManager.swift */; };
 		1EB5DE9820FD1EAF0088A41C /* LogTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EB5DE9720FD1EAF0088A41C /* LogTableViewCell.swift */; };
-		1EB5DE9B20FD29C70088A41C /* DriveSession+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EB5DE9920FD29C70088A41C /* DriveSession+CoreDataClass.swift */; };
-		1EB5DE9C20FD29C70088A41C /* DriveSession+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EB5DE9A20FD29C70088A41C /* DriveSession+CoreDataProperties.swift */; };
 		1EB5DE9E20FD3A6A0088A41C /* DriveSessionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EB5DE9D20FD3A6A0088A41C /* DriveSessionViewController.swift */; };
 		1EC8962E20EEA83C005EA43B /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EC8962D20EEA83C005EA43B /* Settings.swift */; };
 		1EC8963220F672BB005EA43B /* DataRecording.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EC8963120F672BB005EA43B /* DataRecording.swift */; };
@@ -78,12 +86,20 @@
 		1E7FD61720FE749500194549 /* SpreadsheetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpreadsheetViewController.swift; sourceTree = "<group>"; };
 		1E7FD61920FE7A9100194549 /* Cells.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cells.swift; sourceTree = "<group>"; };
 		1E85075C20D8AED100204D79 /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
+		1E92AC6521056A5500A313BF /* AccEntity+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AccEntity+CoreDataClass.swift"; sourceTree = "<group>"; };
+		1E92AC6621056A5500A313BF /* AccEntity+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AccEntity+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		1E92AC6721056A5500A313BF /* DriveSession+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DriveSession+CoreDataClass.swift"; sourceTree = "<group>"; };
+		1E92AC6821056A5500A313BF /* DriveSession+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DriveSession+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		1E92AC6921056A5500A313BF /* GyroEntity+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GyroEntity+CoreDataClass.swift"; sourceTree = "<group>"; };
+		1E92AC6A21056A5500A313BF /* GyroEntity+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GyroEntity+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		1E92AC6B21056A5500A313BF /* LocationEntity+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LocationEntity+CoreDataClass.swift"; sourceTree = "<group>"; };
+		1E92AC6C21056A5500A313BF /* LocationEntity+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LocationEntity+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		1E92AC6D21056A5500A313BF /* MagEntity+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MagEntity+CoreDataClass.swift"; sourceTree = "<group>"; };
+		1E92AC6E21056A5500A313BF /* MagEntity+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MagEntity+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		1EA950ED20DDEAF700CCDADB /* CoreBluetooth.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreBluetooth.framework; path = System/Library/Frameworks/CoreBluetooth.framework; sourceTree = SDKROOT; };
 		1EB5DE8B20FD06E10088A41C /* Database.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Database.xcdatamodel; sourceTree = "<group>"; };
 		1EB5DE9120FD14FF0088A41C /* PersistenceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceManager.swift; sourceTree = "<group>"; };
 		1EB5DE9720FD1EAF0088A41C /* LogTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogTableViewCell.swift; sourceTree = "<group>"; };
-		1EB5DE9920FD29C70088A41C /* DriveSession+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DriveSession+CoreDataClass.swift"; sourceTree = "<group>"; };
-		1EB5DE9A20FD29C70088A41C /* DriveSession+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DriveSession+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		1EB5DE9D20FD3A6A0088A41C /* DriveSessionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DriveSessionViewController.swift; sourceTree = "<group>"; };
 		1EC8962D20EEA83C005EA43B /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
 		1EC8963120F672BB005EA43B /* DataRecording.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataRecording.swift; sourceTree = "<group>"; };
@@ -200,6 +216,16 @@
 			children = (
 				1EC8963120F672BB005EA43B /* DataRecording.swift */,
 				1EB5DE9120FD14FF0088A41C /* PersistenceManager.swift */,
+				1E92AC6521056A5500A313BF /* AccEntity+CoreDataClass.swift */,
+				1E92AC6621056A5500A313BF /* AccEntity+CoreDataProperties.swift */,
+				1E92AC6721056A5500A313BF /* DriveSession+CoreDataClass.swift */,
+				1E92AC6821056A5500A313BF /* DriveSession+CoreDataProperties.swift */,
+				1E92AC6921056A5500A313BF /* GyroEntity+CoreDataClass.swift */,
+				1E92AC6A21056A5500A313BF /* GyroEntity+CoreDataProperties.swift */,
+				1E92AC6B21056A5500A313BF /* LocationEntity+CoreDataClass.swift */,
+				1E92AC6C21056A5500A313BF /* LocationEntity+CoreDataProperties.swift */,
+				1E92AC6D21056A5500A313BF /* MagEntity+CoreDataClass.swift */,
+				1E92AC6E21056A5500A313BF /* MagEntity+CoreDataProperties.swift */,
 				1EB5DE8A20FD06E10088A41C /* Database.xcdatamodeld */,
 			);
 			path = Storage;
@@ -271,8 +297,6 @@
 		3794948D20BB3146001E5D61 /* vehsense */ = {
 			isa = PBXGroup;
 			children = (
-				1EB5DE9920FD29C70088A41C /* DriveSession+CoreDataClass.swift */,
-				1EB5DE9A20FD29C70088A41C /* DriveSession+CoreDataProperties.swift */,
 				1E85076020D8AF6900204D79 /* Controller */,
 				1E85075F20D8AF6000204D79 /* View */,
 				1E85075E20D8AF5600204D79 /* Model */,
@@ -481,33 +505,41 @@
 				1E85075D20D8AED100204D79 /* SignInViewController.swift in Sources */,
 				1EC8963220F672BB005EA43B /* DataRecording.swift in Sources */,
 				3794949120BB3146001E5D61 /* ViewController.swift in Sources */,
-				1EB5DE9C20FD29C70088A41C /* DriveSession+CoreDataProperties.swift in Sources */,
 				1E30DBD520E33FE1009836EC /* GPS.swift in Sources */,
 				1E30DBCD20E0418E009836EC /* SettingsTableViewCell.swift in Sources */,
+				1E92AC7321056A5500A313BF /* GyroEntity+CoreDataClass.swift in Sources */,
 				1E214B3E20DC222800BCC96E /* DataViewController.swift in Sources */,
 				3794948F20BB3146001E5D61 /* AppDelegate.swift in Sources */,
+				1E92AC7121056A5500A313BF /* DriveSession+CoreDataClass.swift in Sources */,
 				1E2C3BA320E410AE004304EB /* Magnetometer.swift in Sources */,
 				1E2C3BA520E4844A004304EB /* Setup.swift in Sources */,
 				1E214B4220DC2E5700BCC96E /* SetupTableViewCell.swift in Sources */,
 				1EB5DE8C20FD06E10088A41C /* Database.xcdatamodeld in Sources */,
+				1E92AC7421056A5500A313BF /* GyroEntity+CoreDataProperties.swift in Sources */,
 				1E30DBCF20E07BBC009836EC /* BluetoothTableViewCell.swift in Sources */,
+				1E92AC7021056A5500A313BF /* AccEntity+CoreDataProperties.swift in Sources */,
 				1EB5DE9820FD1EAF0088A41C /* LogTableViewCell.swift in Sources */,
 				1E7FD61820FE749500194549 /* SpreadsheetViewController.swift in Sources */,
 				1E30DBD120E07CC3009836EC /* BluetoothViewController.swift in Sources */,
+				1E92AC7621056A5500A313BF /* LocationEntity+CoreDataProperties.swift in Sources */,
+				1E92AC7721056A5500A313BF /* MagEntity+CoreDataClass.swift in Sources */,
 				1E7FD61A20FE7A9100194549 /* Cells.swift in Sources */,
 				1E2C3BA120E4056E004304EB /* Accelerometer.swift in Sources */,
 				1EB5DE9220FD14FF0088A41C /* PersistenceManager.swift in Sources */,
+				1E92AC7521056A5500A313BF /* LocationEntity+CoreDataClass.swift in Sources */,
+				1E92AC6F21056A5500A313BF /* AccEntity+CoreDataClass.swift in Sources */,
+				1E92AC7821056A5500A313BF /* MagEntity+CoreDataProperties.swift in Sources */,
 				1E214B3C20D906B700BCC96E /* MapViewController.swift in Sources */,
 				1EC8965520F6A8F2005EA43B /* LogViewController.swift in Sources */,
 				1E214B4020DC238800BCC96E /* SetupViewController.swift in Sources */,
 				1EB5DE9E20FD3A6A0088A41C /* DriveSessionViewController.swift in Sources */,
+				1E92AC7221056A5500A313BF /* DriveSession+CoreDataProperties.swift in Sources */,
 				1E2C3BA720E4A85A004304EB /* GPSTableViewCell.swift in Sources */,
 				1E5FBCB620E37AF700CCDAE5 /* Constants.swift in Sources */,
 				1E2C3B9F20E3F392004304EB /* Gyroscope.swift in Sources */,
 				1E30DBD720E34003009836EC /* Bluetooth.swift in Sources */,
 				1EC8962E20EEA83C005EA43B /* Settings.swift in Sources */,
 				1E30DBCB20E03E13009836EC /* SettingsViewController.swift in Sources */,
-				1EB5DE9B20FD29C70088A41C /* DriveSession+CoreDataClass.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

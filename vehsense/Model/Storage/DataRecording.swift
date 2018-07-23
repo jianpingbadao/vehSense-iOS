@@ -124,37 +124,66 @@ class DataRecording{
     }
     
     func stopRecording(){
-        
         endTime = dateFormatter.string(from: NSDate() as Date)
         isRecording = false
         recordingState = false
-        
+    }
+    
+    func save(){
         let driveSession = DriveSession(context: PersistenceManager.shared.context)
         
-        driveSession.mphList = mphList
-        driveSession.bearingList = bearingList
-        driveSession.latitudeList = latList
-        driveSession.longitudeList = longList
-        driveSession.locationTimeList = locationTimeList
+        if Settings.shared.gpsState{
+            let locale = LocationEntity(context: PersistenceManager.shared.context)
+            
+            locale.bearing = bearingList
+            locale.mph = mphList
+            locale.lat = latList
+            locale.long = longList
+            locale.timeList = locationTimeList
+            
+            driveSession.locale = locale
+        }
         
-        driveSession.gyroXList = gyroXList
-        driveSession.gyroYList = gyroYList
-        driveSession.gyroZList = gyroZList
-        driveSession.gyroTimeList = gyroTimeList
+        if Setup.shared.accSelectedState{
+            let accelerometer = AccEntity(context: PersistenceManager.shared.context)
+            
+            accelerometer.x = accXList
+            accelerometer.y = accYList
+            accelerometer.z = accZList
+            accelerometer.timeList = accTimeList
+            
+            driveSession.accelerometer = accelerometer
+        }
         
-        driveSession.accXList = accXList
-        driveSession.accYList = accYList
-        driveSession.accZList = accZList
-        driveSession.accTimeList = accTimeList
+        if Setup.shared.gyroSelectedState{
+            let gyroscope = GyroEntity(context: PersistenceManager.shared.context)
+            
+            gyroscope.x = gyroXList
+            gyroscope.y = gyroYList
+            gyroscope.z = gyroZList
+            gyroscope.timeList = gyroTimeList
+            
+            driveSession.gyroscope = gyroscope
+        }
         
-        driveSession.magXList = magXList
-        driveSession.magYList = magYList
-        driveSession.magZList = magZList
-        driveSession.magTimeList = magTimeList
+        if Setup.shared.magSelectedState{
+            let magnetometer = MagEntity(context: PersistenceManager.shared.context)
+            
+            magnetometer.x = magXList
+            magnetometer.y = magYList
+            magnetometer.z = magZList
+            magnetometer.timeList = magTimeList
+            
+            driveSession.magnetometer = magnetometer
+        }
         
         driveSession.sessionStartTime = startTime
         driveSession.sessionEndTime = endTime
-        
+        PersistenceManager.shared.saveContext()
+        clearLists()
+    }
+    
+    func clearLists(){
         mphList.removeAll()
         latList.removeAll()
         longList.removeAll()
@@ -165,7 +194,7 @@ class DataRecording{
         gyroYList.removeAll()
         gyroZList.removeAll()
         gyroTimeList.removeAll()
-
+        
         magXList.removeAll()
         magYList.removeAll()
         magZList.removeAll()
@@ -175,9 +204,6 @@ class DataRecording{
         accYList.removeAll()
         accZList.removeAll()
         accTimeList.removeAll()
-
-        PersistenceManager.shared.saveContext()
-        
     }
 
 }

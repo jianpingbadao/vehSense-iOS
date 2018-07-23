@@ -50,6 +50,12 @@ final class PersistenceManager{
     
     // MARK: - Core Data Saving support
     
+    func deleteSession(session : DriveSession){
+        context.delete(session)
+        saveContext()
+        print("session deleted")
+    }
+    
     func saveContext () {
 
         if context.hasChanges {

@@ -98,11 +98,7 @@ class ViewController: UIViewController {
         self.write(speed! +  " \n",to: "/gps.txt" , folderDestination)
     }
     
-    
-    
-    
-    
-    
+
     func write(_ text: String,to fileNamed: String,_ folder: String = "SavedFiles") {
         
         guard let writePath = NSURL(fileURLWithPath: rootFolder).appendingPathComponent(folder) else { return }
