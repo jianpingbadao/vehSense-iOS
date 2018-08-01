@@ -7,6 +7,9 @@ target 'vehsense' do
 
   # Pods for vehsense
 pod 'SpreadsheetView'
+pod 'Firebase/Core'
+pod 'Firebase/Database'
+pod 'Firebase/Auth'
   
 
   target 'vehsenseTests' do

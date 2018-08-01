@@ -45,8 +45,12 @@
 		1EC8962E20EEA83C005EA43B /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EC8962D20EEA83C005EA43B /* Settings.swift */; };
 		1EC8963220F672BB005EA43B /* DataRecording.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EC8963120F672BB005EA43B /* DataRecording.swift */; };
 		1EC8965520F6A8F2005EA43B /* LogViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EC8965420F6A8F2005EA43B /* LogViewController.swift */; };
+		1EE29BAF2111581E001B9772 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EE29BAE2111581E001B9772 /* RegisterViewController.swift */; };
+		1EE29BB121116B4C001B9772 /* RecoveryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EE29BB021116B4C001B9772 /* RecoveryViewController.swift */; };
+		1EE29BB3211176B3001B9772 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1EE29BB2211176B2001B9772 /* GoogleService-Info.plist */; };
+		1EE29BB52111A36D001B9772 /* AccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EE29BB42111A36D001B9772 /* AccountViewController.swift */; };
 		3794948F20BB3146001E5D61 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3794948E20BB3146001E5D61 /* AppDelegate.swift */; };
-		3794949120BB3146001E5D61 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3794949020BB3146001E5D61 /* ViewController.swift */; };
+		3794949120BB3146001E5D61 /* Jalil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3794949020BB3146001E5D61 /* Jalil.swift */; };
 		3794949420BB3146001E5D61 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3794949220BB3146001E5D61 /* Main.storyboard */; };
 		3794949620BB3147001E5D61 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3794949520BB3147001E5D61 /* Assets.xcassets */; };
 		3794949920BB3147001E5D61 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3794949720BB3147001E5D61 /* LaunchScreen.storyboard */; };
@@ -104,9 +108,13 @@
 		1EC8962D20EEA83C005EA43B /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
 		1EC8963120F672BB005EA43B /* DataRecording.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataRecording.swift; sourceTree = "<group>"; };
 		1EC8965420F6A8F2005EA43B /* LogViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogViewController.swift; sourceTree = "<group>"; };
+		1EE29BAE2111581E001B9772 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
+		1EE29BB021116B4C001B9772 /* RecoveryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecoveryViewController.swift; sourceTree = "<group>"; };
+		1EE29BB2211176B2001B9772 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		1EE29BB42111A36D001B9772 /* AccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountViewController.swift; sourceTree = "<group>"; };
 		3794948B20BB3146001E5D61 /* vehsense.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = vehsense.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3794948E20BB3146001E5D61 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		3794949020BB3146001E5D61 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		3794949020BB3146001E5D61 /* Jalil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Jalil.swift; sourceTree = "<group>"; };
 		3794949320BB3146001E5D61 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		3794949520BB3147001E5D61 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3794949820BB3147001E5D61 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -178,6 +186,7 @@
 			children = (
 				1E30DBCA20E03E13009836EC /* SettingsViewController.swift */,
 				1E30DBD020E07CC3009836EC /* BluetoothViewController.swift */,
+				1EE29BB42111A36D001B9772 /* AccountViewController.swift */,
 			);
 			path = Settings;
 			sourceTree = "<group>";
@@ -194,8 +203,10 @@
 			isa = PBXGroup;
 			children = (
 				1E85075C20D8AED100204D79 /* SignInViewController.swift */,
-				3794949020BB3146001E5D61 /* ViewController.swift */,
+				1EE29BAE2111581E001B9772 /* RegisterViewController.swift */,
+				1EE29BB021116B4C001B9772 /* RecoveryViewController.swift */,
 				3794948E20BB3146001E5D61 /* AppDelegate.swift */,
+				3794949020BB3146001E5D61 /* Jalil.swift */,
 			);
 			path = Startup;
 			sourceTree = "<group>";
@@ -302,6 +313,7 @@
 				1E85075E20D8AF5600204D79 /* Model */,
 				3794949520BB3147001E5D61 /* Assets.xcassets */,
 				3794949A20BB3147001E5D61 /* Info.plist */,
+				1EE29BB2211176B2001B9772 /* GoogleService-Info.plist */,
 			);
 			path = vehsense;
 			sourceTree = "<group>";
@@ -426,6 +438,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3794949920BB3147001E5D61 /* LaunchScreen.storyboard in Resources */,
+				1EE29BB3211176B3001B9772 /* GoogleService-Info.plist in Resources */,
 				3794949620BB3147001E5D61 /* Assets.xcassets in Resources */,
 				3794949420BB3146001E5D61 /* Main.storyboard in Resources */,
 			);
@@ -484,11 +497,19 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-vehsense/Pods-vehsense-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
 				"${BUILT_PRODUCTS_DIR}/SpreadsheetView/SpreadsheetView.framework",
+				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SpreadsheetView.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -504,9 +525,10 @@
 			files = (
 				1E85075D20D8AED100204D79 /* SignInViewController.swift in Sources */,
 				1EC8963220F672BB005EA43B /* DataRecording.swift in Sources */,
-				3794949120BB3146001E5D61 /* ViewController.swift in Sources */,
+				3794949120BB3146001E5D61 /* Jalil.swift in Sources */,
 				1E30DBD520E33FE1009836EC /* GPS.swift in Sources */,
 				1E30DBCD20E0418E009836EC /* SettingsTableViewCell.swift in Sources */,
+				1EE29BB121116B4C001B9772 /* RecoveryViewController.swift in Sources */,
 				1E92AC7321056A5500A313BF /* GyroEntity+CoreDataClass.swift in Sources */,
 				1E214B3E20DC222800BCC96E /* DataViewController.swift in Sources */,
 				3794948F20BB3146001E5D61 /* AppDelegate.swift in Sources */,
@@ -538,6 +560,8 @@
 				1E5FBCB620E37AF700CCDAE5 /* Constants.swift in Sources */,
 				1E2C3B9F20E3F392004304EB /* Gyroscope.swift in Sources */,
 				1E30DBD720E34003009836EC /* Bluetooth.swift in Sources */,
+				1EE29BB52111A36D001B9772 /* AccountViewController.swift in Sources */,
+				1EE29BAF2111581E001B9772 /* RegisterViewController.swift in Sources */,
 				1EC8962E20EEA83C005EA43B /* Settings.swift in Sources */,
 				1E30DBCB20E03E13009836EC /* SettingsViewController.swift in Sources */,
 			);

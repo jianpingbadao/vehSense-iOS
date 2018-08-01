@@ -125,6 +125,7 @@ extension SettingsViewController : UITableViewDataSource{
         
         case 2:
             tableView.deselectRow(at: indexPath, animated: true)
+            performSegue(withIdentifier: "accountSegue", sender: self)
         default:
             break
         }
