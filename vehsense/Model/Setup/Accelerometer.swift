@@ -38,7 +38,7 @@ class Accelerometer{
         motionManager.startAccelerometerUpdates(to: OperationQueue.current!) { (rawData, error) in
             if let accData = rawData
             {
-                print("ACC: \(self.motionManager.accelerometerUpdateInterval)")
+                //print("ACC: \(self.motionManager.accelerometerUpdateInterval)")
                 let data = ["accData" : accData]
                 NotificationCenter.default.post(name: self.notificationName, object: nil, userInfo: data)
             }

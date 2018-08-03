@@ -41,7 +41,7 @@ class Magnetometer{
         motionManager.startMagnetometerUpdates(to: OperationQueue.current!) { (rawData, error) in
             if let magData = rawData
             {
-                print("MAG: \(self.motionManager.magnetometerUpdateInterval)")
+                //print("MAG: \(self.motionManager.magnetometerUpdateInterval)")
                 let data = ["magData" : magData]
                 NotificationCenter.default.post(name: self.notificationName, object: nil, userInfo: data)
                 

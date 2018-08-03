@@ -29,7 +29,9 @@ class MapViewController: UIViewController {
             
             let cancelAction = UIAlertAction(title: NSLocalizedString("Cancel", comment: ""), style: .cancel, handler: nil)
             let settingsAction = UIAlertAction(title: NSLocalizedString("Settings", comment: ""), style: .default) { (UIAlertAction) in
-                UIApplication.shared.openURL(NSURL(string: UIApplicationOpenSettingsURLString)! as URL)
+                if let url = URL(string: "\(NSURL(string: UIApplicationOpenSettingsURLString)!)") {
+                    UIApplication.shared.open(url, options: [:], completionHandler: nil)
+                }
             }
             
             alertController.addAction(cancelAction)
@@ -45,7 +47,7 @@ class MapViewController: UIViewController {
     
     @objc func updateLocation(notification : Notification){
         guard let location = notification.userInfo?["location"] as? CLLocation else { return }
-        var region = MKCoordinateRegion(center: location.coordinate, span: MKCoordinateSpan(latitudeDelta: 0.01, longitudeDelta: 0.01))
+        let region = MKCoordinateRegion(center: location.coordinate, span: MKCoordinateSpan(latitudeDelta: 0.01, longitudeDelta: 0.01))
         mapView.setRegion(region, animated: true)
         mapView.showsUserLocation = true
     }

@@ -146,11 +146,12 @@ class RegisterViewController: UIViewController {
             if let error = error{
                 self.createAlert(result: .failed, message: error.localizedDescription)
             } else{
-                guard let result = result else {
+                if result == nil {
                     self.createAlert(result: .failed, message: "Error")
                     return
+                } else {
+                    self.createAlert(result: .success, message: "Success")
                 }
-                self.createAlert(result: .success, message: "Success")
             }
         }
     }

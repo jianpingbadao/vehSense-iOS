@@ -48,7 +48,9 @@ class SettingsViewController: UIViewController, UITableViewDelegate {
                 
                 let cancelAction = UIAlertAction(title: NSLocalizedString("Cancel", comment: ""), style: .cancel, handler: nil)
                 let settingsAction = UIAlertAction(title: NSLocalizedString("Settings", comment: ""), style: .default) { (UIAlertAction) in
-                    UIApplication.shared.openURL(NSURL(string: UIApplicationOpenSettingsURLString)! as URL)
+                    if let url = URL(string: "\(NSURL(string: UIApplicationOpenSettingsURLString)!)") {
+                        UIApplication.shared.open(url, options: [:], completionHandler: nil)
+                    }
                 }
                 
                 alertController.addAction(cancelAction)

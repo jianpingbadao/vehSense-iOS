@@ -41,7 +41,7 @@ extension BluetoothViewController : UITableViewDataSource{
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        var cell = bluetoothTableView.dequeueReusableCell(withIdentifier: "bluetoothCell", for: indexPath) as! BluetoothTableViewCell
+        let cell = bluetoothTableView.dequeueReusableCell(withIdentifier: "bluetoothCell", for: indexPath) as! BluetoothTableViewCell
         cell.deviceName.text = deviceArray[indexPath.row].name ?? "no name"
         return cell
     }

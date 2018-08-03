@@ -40,7 +40,7 @@ class Gyroscope{
     {
         motionManager.startGyroUpdates(to: OperationQueue.current!) { (rawData, error) in
             if let gyroscopeData = rawData{
-                print("GYRO: \(self.motionManager.gyroUpdateInterval)")
+                //print("GYRO: \(self.motionManager.gyroUpdateInterval)")
                 let data = ["gyroData" : gyroscopeData]
                 NotificationCenter.default.post(name: self.notificationName, object: nil, userInfo: data)
             }
