@@ -720,38 +720,6 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="3TJ-C9-J6H">
                                 <rect key="frame" x="0.0" y="64" width="375" height="510"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" id="fie-cG-ENY" customClass="SetupTableViewCell" customModule="vehsense" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="375" height="44"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="fie-cG-ENY" id="i1B-Na-dSP">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="YQI-X0-d3Z">
-                                                    <rect key="frame" x="306" y="6.5" width="51" height="31"/>
-                                                </switch>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JAg-En-I58">
-                                                    <rect key="frame" x="15" y="11" width="42" height="22"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                            </subviews>
-                                            <constraints>
-                                                <constraint firstItem="JAg-En-I58" firstAttribute="top" secondItem="i1B-Na-dSP" secondAttribute="topMargin" id="EYB-tg-obj"/>
-                                                <constraint firstAttribute="trailing" secondItem="YQI-X0-d3Z" secondAttribute="trailing" constant="20" symbolic="YES" id="L0v-ae-it8"/>
-                                                <constraint firstItem="YQI-X0-d3Z" firstAttribute="centerY" secondItem="JAg-En-I58" secondAttribute="centerY" id="p9I-Fh-cJI"/>
-                                                <constraint firstItem="JAg-En-I58" firstAttribute="leading" secondItem="i1B-Na-dSP" secondAttribute="leadingMargin" id="qJ7-ry-1iE"/>
-                                                <constraint firstItem="JAg-En-I58" firstAttribute="bottom" secondItem="i1B-Na-dSP" secondAttribute="bottomMargin" id="ztz-hP-8HN"/>
-                                            </constraints>
-                                        </tableViewCellContentView>
-                                        <connections>
-                                            <outlet property="optionSwitch" destination="YQI-X0-d3Z" id="5Kl-ds-O3Y"/>
-                                            <outlet property="titleLabel" destination="JAg-En-I58" id="iqS-Vd-TrC"/>
-                                        </connections>
-                                    </tableViewCell>
-                                </prototypes>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

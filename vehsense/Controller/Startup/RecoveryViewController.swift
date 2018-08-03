@@ -11,6 +11,10 @@ import FirebaseAuth
 
 class RecoveryViewController: UIViewController {
     
+    static func hi(){
+        print("hi")
+    }
+    
     let topContainer : UIView = {
         let view = UIView()
         return view

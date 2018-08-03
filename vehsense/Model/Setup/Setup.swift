@@ -10,6 +10,8 @@ import Foundation
 
 class Setup{
     
+    static let frequencyArray : [Double] = [0.05, 0.02, 0.005]
+    
     static let shared = Setup()
     
     var accSelectedState = false

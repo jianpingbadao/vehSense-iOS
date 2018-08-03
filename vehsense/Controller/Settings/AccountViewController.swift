@@ -24,6 +24,7 @@ class AccountViewController: UIViewController {
         setupLayout()
     }
     
+    
     func setupLayout(){
         view.addSubview(tableView)
         tableView.translatesAutoresizingMaskIntoConstraints = false
@@ -44,12 +45,15 @@ extension AccountViewController : UITableViewDelegate, UITableViewDataSource{
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = UITableViewCell(style: .default, reuseIdentifier: "defaultCell")
         cell.textLabel?.text = "Sign Out"
-        cell.textLabel?.textColor = .red
+        cell.textLabel?.textColor = UIColor.blue
         return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if indexPath.row == 0{
+            DataRecording.shared.stopRecording() //makes sure to reset recording state, should reset all states in future
+            GPS.shared.isRecording = false
+            
             view.window!.rootViewController?.dismiss(animated: true, completion: nil)
 
         }

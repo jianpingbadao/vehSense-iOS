@@ -99,10 +99,9 @@ extension SettingsViewController : UITableViewDataSource{
             gpsSwitch = cell.gpsSwitch
             cell.gpsSwitch.isOn = Settings.shared.gpsState
             
-            if GPS.shared.isRecording{
+            if DataRecording.shared.recordingState{
                 cell.gpsSwitch.isEnabled = false
             } else { cell.gpsSwitch.isEnabled = true }
-            
             
             cell.gpsSwitch.addTarget(self, action: #selector(switchAction(sender:)), for: .valueChanged)
             return cell

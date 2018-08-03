@@ -11,7 +11,7 @@
 		1E214B3C20D906B700BCC96E /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E214B3B20D906B700BCC96E /* MapViewController.swift */; };
 		1E214B3E20DC222800BCC96E /* DataViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E214B3D20DC222800BCC96E /* DataViewController.swift */; };
 		1E214B4020DC238800BCC96E /* SetupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E214B3F20DC238800BCC96E /* SetupViewController.swift */; };
-		1E214B4220DC2E5700BCC96E /* SetupTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E214B4120DC2E5700BCC96E /* SetupTableViewCell.swift */; };
+		1E214B4220DC2E5700BCC96E /* SetupTableHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E214B4120DC2E5700BCC96E /* SetupTableHeaderView.swift */; };
 		1E2C3B9F20E3F392004304EB /* Gyroscope.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E2C3B9E20E3F392004304EB /* Gyroscope.swift */; };
 		1E2C3BA120E4056E004304EB /* Accelerometer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E2C3BA020E4056E004304EB /* Accelerometer.swift */; };
 		1E2C3BA320E410AE004304EB /* Magnetometer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E2C3BA220E410AE004304EB /* Magnetometer.swift */; };
@@ -49,6 +49,7 @@
 		1EE29BB121116B4C001B9772 /* RecoveryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EE29BB021116B4C001B9772 /* RecoveryViewController.swift */; };
 		1EE29BB3211176B3001B9772 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1EE29BB2211176B2001B9772 /* GoogleService-Info.plist */; };
 		1EE29BB52111A36D001B9772 /* AccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EE29BB42111A36D001B9772 /* AccountViewController.swift */; };
+		1EE29BB72113754E001B9772 /* ExpandedTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EE29BB62113754E001B9772 /* ExpandedTableViewCell.swift */; };
 		3794948F20BB3146001E5D61 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3794948E20BB3146001E5D61 /* AppDelegate.swift */; };
 		3794949120BB3146001E5D61 /* Jalil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3794949020BB3146001E5D61 /* Jalil.swift */; };
 		3794949420BB3146001E5D61 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3794949220BB3146001E5D61 /* Main.storyboard */; };
@@ -74,7 +75,7 @@
 		1E214B3B20D906B700BCC96E /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		1E214B3D20DC222800BCC96E /* DataViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataViewController.swift; sourceTree = "<group>"; };
 		1E214B3F20DC238800BCC96E /* SetupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetupViewController.swift; sourceTree = "<group>"; };
-		1E214B4120DC2E5700BCC96E /* SetupTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetupTableViewCell.swift; sourceTree = "<group>"; };
+		1E214B4120DC2E5700BCC96E /* SetupTableHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetupTableHeaderView.swift; sourceTree = "<group>"; };
 		1E2C3B9E20E3F392004304EB /* Gyroscope.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Gyroscope.swift; sourceTree = "<group>"; };
 		1E2C3BA020E4056E004304EB /* Accelerometer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Accelerometer.swift; sourceTree = "<group>"; };
 		1E2C3BA220E410AE004304EB /* Magnetometer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Magnetometer.swift; sourceTree = "<group>"; };
@@ -112,6 +113,7 @@
 		1EE29BB021116B4C001B9772 /* RecoveryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecoveryViewController.swift; sourceTree = "<group>"; };
 		1EE29BB2211176B2001B9772 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		1EE29BB42111A36D001B9772 /* AccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountViewController.swift; sourceTree = "<group>"; };
+		1EE29BB62113754E001B9772 /* ExpandedTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpandedTableViewCell.swift; sourceTree = "<group>"; };
 		3794948B20BB3146001E5D61 /* vehsense.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = vehsense.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3794948E20BB3146001E5D61 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3794949020BB3146001E5D61 /* Jalil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Jalil.swift; sourceTree = "<group>"; };
@@ -155,9 +157,10 @@
 				1E30DBCC20E0418E009836EC /* SettingsTableViewCell.swift */,
 				1E30DBCE20E07BBC009836EC /* BluetoothTableViewCell.swift */,
 				1E2C3BA620E4A85A004304EB /* GPSTableViewCell.swift */,
-				1E214B4120DC2E5700BCC96E /* SetupTableViewCell.swift */,
+				1E214B4120DC2E5700BCC96E /* SetupTableHeaderView.swift */,
 				1EB5DE9720FD1EAF0088A41C /* LogTableViewCell.swift */,
 				1E7FD61920FE7A9100194549 /* Cells.swift */,
+				1EE29BB62113754E001B9772 /* ExpandedTableViewCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -535,7 +538,7 @@
 				1E92AC7121056A5500A313BF /* DriveSession+CoreDataClass.swift in Sources */,
 				1E2C3BA320E410AE004304EB /* Magnetometer.swift in Sources */,
 				1E2C3BA520E4844A004304EB /* Setup.swift in Sources */,
-				1E214B4220DC2E5700BCC96E /* SetupTableViewCell.swift in Sources */,
+				1E214B4220DC2E5700BCC96E /* SetupTableHeaderView.swift in Sources */,
 				1EB5DE8C20FD06E10088A41C /* Database.xcdatamodeld in Sources */,
 				1E92AC7421056A5500A313BF /* GyroEntity+CoreDataProperties.swift in Sources */,
 				1E30DBCF20E07BBC009836EC /* BluetoothTableViewCell.swift in Sources */,
@@ -557,6 +560,7 @@
 				1EB5DE9E20FD3A6A0088A41C /* DriveSessionViewController.swift in Sources */,
 				1E92AC7221056A5500A313BF /* DriveSession+CoreDataProperties.swift in Sources */,
 				1E2C3BA720E4A85A004304EB /* GPSTableViewCell.swift in Sources */,
+				1EE29BB72113754E001B9772 /* ExpandedTableViewCell.swift in Sources */,
 				1E5FBCB620E37AF700CCDAE5 /* Constants.swift in Sources */,
 				1E2C3B9F20E3F392004304EB /* Gyroscope.swift in Sources */,
 				1E30DBD720E34003009836EC /* Bluetooth.swift in Sources */,
