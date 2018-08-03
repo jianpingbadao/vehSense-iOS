@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import FirebaseAuth
 
 class AccountViewController: UIViewController {
     
@@ -54,8 +55,24 @@ extension AccountViewController : UITableViewDelegate, UITableViewDataSource{
             DataRecording.shared.stopRecording() //makes sure to reset recording state, should reset all states in future
             GPS.shared.isRecording = false
             
-            view.window!.rootViewController?.dismiss(animated: true, completion: nil)
+            if let username = Auth.auth().currentUser?.email{
+                let alertController = UIAlertController(title: NSLocalizedString("\(username) has been signed out", comment: ""), message: NSLocalizedString("", comment: ""), preferredStyle: .alert)
+                let action = UIAlertAction(title: NSLocalizedString("ok", comment: ""), style: .cancel) { (_) in
+                    self.view.window!.rootViewController?.dismiss(animated: true, completion: nil)
+                }
+                alertController.addAction(action)
+                do{
+                    try Auth.auth().signOut()
+                    present(alertController, animated: true, completion: nil)
+                    
+                }
+                catch{
+                    print(error.localizedDescription)
+                }
 
+            } else{
+                 self.view.window!.rootViewController?.dismiss(animated: true, completion: nil)
+            }
         }
     }
     

@@ -9,9 +9,11 @@
 import UIKit
 import FirebaseAuth
 
+
 class SignInViewController: UIViewController {
     
-    var originalY : CGFloat?
+    var passwordOrigin : CGFloat? { didSet { passwordOrigin = oldValue ?? passwordOrigin } }
+    var passwordDestination : CGFloat? { didSet { passwordDestination = oldValue ?? passwordDestination } }
     
     let topContainer : UIView = {
         let view = UIView()
@@ -119,7 +121,12 @@ class SignInViewController: UIViewController {
 
         AppUtility.lockOrientation(.portrait)
         AppUtility.lockOrientation(.portrait, andRotateTo: .portrait)
-        
+    }
+    
+
+    
+    deinit {
+        NotificationCenter.default.removeObserver(self)
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -137,36 +144,44 @@ class SignInViewController: UIViewController {
         
         NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillShow), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillHide), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
-        
+    
         setupLayout()
         
         let savedEmail = UserDefaults.standard.string(forKey: "email")
         if let email = savedEmail{
             emailField.text = email
         }
+        
     }
     
     @objc func keyboardWillShow(notification: NSNotification) {
-        originalY = passwordField.frame.origin.y
+        self.passwordOrigin = self.passwordField.frame.origin.y
         if passwordField.isEditing{
             if let keyboardSize = (notification.userInfo?[UIKeyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue {
-                self.emailField.isEnabled = false
-                UIView.animate(withDuration: 0.1, animations: { () -> Void in
-                    self.passwordField.frame.origin.y -= (keyboardSize.height/3)
-                    self.emailField.alpha = 0
-                    self.view.layoutIfNeeded()
-                })
+                if let origin = self.passwordOrigin{
+                    self.passwordDestination =  origin - (keyboardSize.height/3)
+                    self.emailField.isEnabled = false
+                    UIView.animate(withDuration: 0.1, animations: { () -> Void in
+                        if let destination = self.passwordDestination{
+                            self.passwordField.frame.origin.y = destination
+                            self.emailField.alpha = 0
+                            self.view.layoutIfNeeded()
+                        }
+                    })
+                }
             }
         }
     }
     
     @objc func keyboardWillHide(notification: NSNotification) {
         if passwordField.isEditing{
+            self.emailField.isEnabled = false
             UIView.animate(withDuration: 0.1, animations: {
                 self.emailField.alpha = 1
-                if let origin = self.originalY{
+                if let origin = self.passwordOrigin{
                     self.passwordField.frame.origin.y = origin
                 }
+                
                 self.view.layoutIfNeeded()
             }) { (true) in
                 self.emailField.isEnabled = true
@@ -190,6 +205,7 @@ class SignInViewController: UIViewController {
                     self.createAlert(result: .failed, message: "Error")
                 } else{
                     UserDefaults.standard.set(self.emailField.text, forKey: "email")
+                    self.passwordField.text = ""
                     let entryVC = self.storyboard?.instantiateViewController(withIdentifier: "entryVC") as! UITabBarController
                     self.present(entryVC, animated: true, completion: nil)
                 }
