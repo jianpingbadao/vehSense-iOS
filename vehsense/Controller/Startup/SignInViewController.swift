@@ -116,10 +116,9 @@ class SignInViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        
+
         AppUtility.lockOrientation(.portrait)
-        // Or to rotate and lock
-        // AppUtility.lockOrientation(.portrait, andRotateTo: .portrait)
+        AppUtility.lockOrientation(.portrait, andRotateTo: .portrait)
         
     }
     
@@ -177,7 +176,10 @@ class SignInViewController: UIViewController {
     
     @objc func signInPressed(sender : UIButton){
         
-        guard let email = emailField.text else { return }
+        guard let text = emailField.text else { return }
+        
+        let email = text.trimmingCharacters(in: .whitespacesAndNewlines)
+        
         guard let password = passwordField.text else { return }
         
         Auth.auth().signIn(withEmail: email, password: password) { (user, error) in

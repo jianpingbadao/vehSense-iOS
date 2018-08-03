@@ -68,7 +68,7 @@ class RecoveryViewController: UIViewController {
         
         AppUtility.lockOrientation(.portrait)
         // Or to rotate and lock
-        // AppUtility.lockOrientation(.portrait, andRotateTo: .portrait)
+        AppUtility.lockOrientation(.portrait, andRotateTo: .portrait)
         
     }
     
