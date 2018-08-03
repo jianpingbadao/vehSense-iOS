@@ -50,6 +50,7 @@
 		1EE29BB3211176B3001B9772 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1EE29BB2211176B2001B9772 /* GoogleService-Info.plist */; };
 		1EE29BB52111A36D001B9772 /* AccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EE29BB42111A36D001B9772 /* AccountViewController.swift */; };
 		1EE29BB72113754E001B9772 /* ExpandedTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EE29BB62113754E001B9772 /* ExpandedTableViewCell.swift */; };
+		1EE29BB92114C6B2001B9772 /* Orientation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EE29BB82114C6B2001B9772 /* Orientation.swift */; };
 		3794948F20BB3146001E5D61 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3794948E20BB3146001E5D61 /* AppDelegate.swift */; };
 		3794949120BB3146001E5D61 /* Jalil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3794949020BB3146001E5D61 /* Jalil.swift */; };
 		3794949420BB3146001E5D61 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3794949220BB3146001E5D61 /* Main.storyboard */; };
@@ -114,6 +115,7 @@
 		1EE29BB2211176B2001B9772 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		1EE29BB42111A36D001B9772 /* AccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountViewController.swift; sourceTree = "<group>"; };
 		1EE29BB62113754E001B9772 /* ExpandedTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpandedTableViewCell.swift; sourceTree = "<group>"; };
+		1EE29BB82114C6B2001B9772 /* Orientation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Orientation.swift; sourceTree = "<group>"; };
 		3794948B20BB3146001E5D61 /* vehsense.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = vehsense.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3794948E20BB3146001E5D61 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3794949020BB3146001E5D61 /* Jalil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Jalil.swift; sourceTree = "<group>"; };
@@ -210,6 +212,7 @@
 				1EE29BB021116B4C001B9772 /* RecoveryViewController.swift */,
 				3794948E20BB3146001E5D61 /* AppDelegate.swift */,
 				3794949020BB3146001E5D61 /* Jalil.swift */,
+				1EE29BB82114C6B2001B9772 /* Orientation.swift */,
 			);
 			path = Startup;
 			sourceTree = "<group>";
@@ -529,6 +532,7 @@
 				1E85075D20D8AED100204D79 /* SignInViewController.swift in Sources */,
 				1EC8963220F672BB005EA43B /* DataRecording.swift in Sources */,
 				3794949120BB3146001E5D61 /* Jalil.swift in Sources */,
+				1EE29BB92114C6B2001B9772 /* Orientation.swift in Sources */,
 				1E30DBD520E33FE1009836EC /* GPS.swift in Sources */,
 				1E30DBCD20E0418E009836EC /* SettingsTableViewCell.swift in Sources */,
 				1EE29BB121116B4C001B9772 /* RecoveryViewController.swift in Sources */,
