@@ -10,6 +10,8 @@ import Foundation
 import UIKit
 
 
+//class is responsible for locking SPECIFIC view controllers, instead of locking entire app in one orientation, functionality is implemented in Startup files (sign in , register, recovery
+
 struct AppUtility {
     
     static func lockOrientation(_ orientation: UIInterfaceOrientationMask) {

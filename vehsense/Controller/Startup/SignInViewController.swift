@@ -12,6 +12,7 @@ import FirebaseAuth
 
 class SignInViewController: UIViewController {
     
+    //Stores original location of password text field so view knows where to put it back when animation is finished
     var passwordOrigin : CGFloat? { didSet { passwordOrigin = oldValue ?? passwordOrigin } }
     var passwordDestination : CGFloat? { didSet { passwordDestination = oldValue ?? passwordDestination } }
     
@@ -132,7 +133,7 @@ class SignInViewController: UIViewController {
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         
-        // Don't forget to reset when view is being removed
+        //Check Orientation class
         AppUtility.lockOrientation(.all)
     }
     
@@ -142,6 +143,7 @@ class SignInViewController: UIViewController {
         passwordField.delegate = self
         view.addGestureRecognizer(UITapGestureRecognizer(target: view, action: #selector(UIView.endEditing(_:))))
         
+        //notified when keyboard appears on screen
         NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillShow), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillHide), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
     
@@ -154,6 +156,7 @@ class SignInViewController: UIViewController {
         
     }
     
+    //responsible for animating password field when keyboard shows
     @objc func keyboardWillShow(notification: NSNotification) {
         self.passwordOrigin = self.passwordField.frame.origin.y
         if passwordField.isEditing{
@@ -173,6 +176,7 @@ class SignInViewController: UIViewController {
         }
     }
     
+    //responsible for animating password field when keyboard shows
     @objc func keyboardWillHide(notification: NSNotification) {
         if passwordField.isEditing{
             self.emailField.isEnabled = false
@@ -189,6 +193,7 @@ class SignInViewController: UIViewController {
         }
     }
     
+    //responsible for signing in, network request is put on another thread for best practice
     @objc func signInPressed(sender : UIButton){
         
         guard let text = emailField.text else { return }
@@ -197,21 +202,27 @@ class SignInViewController: UIViewController {
         
         guard let password = passwordField.text else { return }
         
-        Auth.auth().signIn(withEmail: email, password: password) { (user, error) in
-            if let error = error{
-                self.createAlert(result: .failed, message: error.localizedDescription)
-            } else{
-                if user == nil{
-                    self.createAlert(result: .failed, message: "Error")
-                } else{
-                    UserDefaults.standard.set(self.emailField.text, forKey: "email")
-                    self.passwordField.text = ""
-                    let entryVC = self.storyboard?.instantiateViewController(withIdentifier: "entryVC") as! UITabBarController
-                    self.present(entryVC, animated: true, completion: nil)
-                }
+        DispatchQueue.global(qos: .userInteractive).async {
+            Auth.auth().signIn(withEmail: email, password: password) { (user, error) in
                 
+                DispatchQueue.main.async {
+                    if let error = error{
+                        Alert.showAlert(vc: self, message: error.localizedDescription)
+                    } else{
+                        if user == nil{
+                            Alert.showAlert(vc: self, message: "User error")
+                        } else{
+                            UserDefaults.standard.set(self.emailField.text, forKey: "email")
+                            let entryVC = self.storyboard?.instantiateViewController(withIdentifier: "entryVC") as! UITabBarController
+                            self.present(entryVC, animated: true, completion: nil)
+                            self.passwordField.text = ""
+                        }
+                    }
+                    
+                }
             }
         }
+        
     }
     
     @objc func guestPressed(_ sender : UIButton){
@@ -229,25 +240,6 @@ class SignInViewController: UIViewController {
         present(recoveryVC, animated: true, completion: nil)
     }
     
-    func createAlert(result : AuthResult, message : String){
-        var action : UIAlertAction
-        
-        let alertController = UIAlertController(title: NSLocalizedString(message, comment: ""), message: NSLocalizedString("", comment: ""), preferredStyle: .alert)
-        
-        switch result {
-            
-        case .failed:
-            action = UIAlertAction(title: NSLocalizedString("Ok", comment: ""), style: .cancel, handler: nil)
-            
-        case .success:
-            action = UIAlertAction(title: NSLocalizedString("Sign in", comment: ""), style: .cancel) { (_) in
-                self.dismiss(animated: true, completion: nil)
-            }
-        }
-        
-        alertController.addAction(action)
-        self.present(alertController, animated: true, completion: nil)
-    }
     
     private func setupLayout(){
         view.addSubview(topContainer)

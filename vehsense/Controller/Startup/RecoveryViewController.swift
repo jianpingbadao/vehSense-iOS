@@ -10,10 +10,7 @@ import UIKit
 import FirebaseAuth
 
 class RecoveryViewController: UIViewController {
-    
-    static func hi(){
-        print("hi")
-    }
+
     
     let topContainer : UIView = {
         let view = UIView()
@@ -86,18 +83,25 @@ class RecoveryViewController: UIViewController {
         setupLayout()
     }
     
+    //responsible for recovery email, network request is put on another thread for best practice
     @objc func recoveryPressed(_ sender : UIButton){
         
         guard let email = emailField.text else {
-            createAlert(result: .failed, message: "Invalid email")
+            Alert.showAlert(vc: self, message: "Email is nil")
             return
         }
         
-        Auth.auth().sendPasswordReset(withEmail: email) { (error) in
-            if let error = error{
-                self.createAlert(result: .failed, message: error.localizedDescription)
-            } else{
-                self.createAlert(result: .success, message: "Password reset sent")
+        DispatchQueue.global(qos: .userInteractive).async {
+            Auth.auth().sendPasswordReset(withEmail: email) { (error) in
+                DispatchQueue.main.async {
+                    if let error = error{
+                        Alert.showAlert(vc: self, message: error.localizedDescription)
+                    } else{
+                        Alert.alertWithAction(vc: self, message: "Email sent", userAction: {
+                            self.dismiss(animated: true, completion: nil)
+                        })
+                    }
+                }
             }
         }
     }
@@ -106,25 +110,6 @@ class RecoveryViewController: UIViewController {
         self.dismiss(animated: true, completion: nil)
     }
     
-    func createAlert(result : AuthResult, message : String){
-        var action : UIAlertAction
-        
-        let alertController = UIAlertController(title: NSLocalizedString(message, comment: ""), message: NSLocalizedString("", comment: ""), preferredStyle: .alert)
-        
-        switch result {
-            
-        case .failed:
-            action = UIAlertAction(title: NSLocalizedString("Ok", comment: ""), style: .cancel, handler: nil)
-            
-        case .success:
-            action = UIAlertAction(title: NSLocalizedString("return home", comment: ""), style: .cancel) { (_) in
-                self.dismiss(animated: true, completion: nil)
-            }
-        }
-        
-        alertController.addAction(action)
-        self.present(alertController, animated: true, completion: nil)
-    }
     
     func setupLayout(){
         view.backgroundColor = .white

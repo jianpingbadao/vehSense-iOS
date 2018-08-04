@@ -51,6 +51,7 @@
 		1EE29BB52111A36D001B9772 /* AccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EE29BB42111A36D001B9772 /* AccountViewController.swift */; };
 		1EE29BB72113754E001B9772 /* ExpandedTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EE29BB62113754E001B9772 /* ExpandedTableViewCell.swift */; };
 		1EE29BB92114C6B2001B9772 /* Orientation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EE29BB82114C6B2001B9772 /* Orientation.swift */; };
+		1EE29BBB21160289001B9772 /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EE29BBA21160289001B9772 /* Alert.swift */; };
 		3794948F20BB3146001E5D61 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3794948E20BB3146001E5D61 /* AppDelegate.swift */; };
 		3794949120BB3146001E5D61 /* Jalil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3794949020BB3146001E5D61 /* Jalil.swift */; };
 		3794949420BB3146001E5D61 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3794949220BB3146001E5D61 /* Main.storyboard */; };
@@ -116,6 +117,7 @@
 		1EE29BB42111A36D001B9772 /* AccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountViewController.swift; sourceTree = "<group>"; };
 		1EE29BB62113754E001B9772 /* ExpandedTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpandedTableViewCell.swift; sourceTree = "<group>"; };
 		1EE29BB82114C6B2001B9772 /* Orientation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Orientation.swift; sourceTree = "<group>"; };
+		1EE29BBA21160289001B9772 /* Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
 		3794948B20BB3146001E5D61 /* vehsense.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = vehsense.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3794948E20BB3146001E5D61 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3794949020BB3146001E5D61 /* Jalil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Jalil.swift; sourceTree = "<group>"; };
@@ -272,6 +274,7 @@
 		1E85075F20D8AF6000204D79 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				1EE29BBA21160289001B9772 /* Alert.swift */,
 				1E7FD66621001AEF00194549 /* Cells */,
 				3794949220BB3146001E5D61 /* Main.storyboard */,
 				3794949720BB3147001E5D61 /* LaunchScreen.storyboard */,
@@ -553,6 +556,7 @@
 				1E92AC7621056A5500A313BF /* LocationEntity+CoreDataProperties.swift in Sources */,
 				1E92AC7721056A5500A313BF /* MagEntity+CoreDataClass.swift in Sources */,
 				1E7FD61A20FE7A9100194549 /* Cells.swift in Sources */,
+				1EE29BBB21160289001B9772 /* Alert.swift in Sources */,
 				1E2C3BA120E4056E004304EB /* Accelerometer.swift in Sources */,
 				1EB5DE9220FD14FF0088A41C /* PersistenceManager.swift in Sources */,
 				1E92AC7521056A5500A313BF /* LocationEntity+CoreDataClass.swift in Sources */,

@@ -122,62 +122,52 @@ class RegisterViewController: UIViewController {
         
     }
     
+    //responsible for registering, network request is put on another thread for best practice
     @objc func registerPressed(_ sender : UIButton){
         
         guard let email = emailField.text else {
-            createAlert(result : .failed , message: "Enter an email address")
+            Alert.showAlert(vc: self, message: "Enter an email address")
             return
         }
         guard let password = passwordField.text else {
-            createAlert(result : .failed , message: "Enter password")
+            Alert.showAlert(vc: self, message: "Password is nil")
             return
         }
         guard let confirmedPassword = confirmField.text else {
-            createAlert(result : .failed , message: "Confirm your password")
+            Alert.showAlert(vc: self, message: "Confirm password is nil")
             return
         }
         
         if password != confirmedPassword {
-            createAlert(result : .failed , message: "Password fields are not the same")
+            Alert.showAlert(vc: self, message: "Passwords are not the same")
             return
         }
         
-        Auth.auth().createUser(withEmail: email, password: password) { (result, error) in
-            if let error = error{
-                self.createAlert(result: .failed, message: error.localizedDescription)
-            } else{
-                if result == nil {
-                    self.createAlert(result: .failed, message: "Error")
-                    return
-                } else {
-                    self.createAlert(result: .success, message: "Success")
+        DispatchQueue.global(qos: .userInteractive).async {
+            Auth.auth().createUser(withEmail: email, password: password) { (result, error) in
+                
+                DispatchQueue.main.async {
+                    if let error = error{
+                        Alert.showAlert(vc: self, message: error.localizedDescription)
+                    } else{
+                        if result == nil {
+                            Alert.showAlert(vc: self, message: "User error")
+                            return
+                        } else {
+                            Alert.alertWithAction(vc: self, message: "Success", userAction: {
+                                self.dismiss(animated: true, completion: nil)
+                            })
+                        }
+                    }
+                    
                 }
             }
         }
+        
     }
     
     @objc func cancelPressed(_ sender : UIButton){
         self.dismiss(animated: true, completion: nil)
-    }
-    
-    func createAlert(result : AuthResult, message : String){
-        var action : UIAlertAction
-        
-        let alertController = UIAlertController(title: NSLocalizedString(message, comment: ""), message: NSLocalizedString("", comment: ""), preferredStyle: .alert)
-        
-        switch result {
-            
-        case .failed:
-            action = UIAlertAction(title: NSLocalizedString("Ok", comment: ""), style: .cancel, handler: nil)
-            
-        case .success:
-            action = UIAlertAction(title: NSLocalizedString("return home", comment: ""), style: .cancel) { (_) in
-                self.dismiss(animated: true, completion: nil)
-            }
-        }
-        
-        alertController.addAction(action)
-        self.present(alertController, animated: true, completion: nil)
     }
     
     func setupLayout(){
