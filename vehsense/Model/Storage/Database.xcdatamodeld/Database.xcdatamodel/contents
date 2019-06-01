@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="14135" systemVersion="17F77" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="AccEntity" representedClassName=".AccEntity" syncable="YES">
+        <attribute name="timeList" optional="YES" attributeType="Transformable" customClassName="[Double]" syncable="YES"/>
+        <attribute name="x" optional="YES" attributeType="Transformable" customClassName="[Double]" syncable="YES"/>
+        <attribute name="y" optional="YES" attributeType="Transformable" customClassName="[Double]" syncable="YES"/>
+        <attribute name="z" optional="YES" attributeType="Transformable" customClassName="[Double]" syncable="YES"/>
+        <relationship name="session" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="DriveSession" syncable="YES"/>
+    </entity>
+    <entity name="DriveSession" representedClassName=".DriveSession" syncable="YES">
+        <attribute name="sessionEndTime" optional="YES" attributeType="String" customClassName="NSDate" syncable="YES"/>
+        <attribute name="sessionStartTime" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="accelerometer" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="AccEntity" syncable="YES"/>
+        <relationship name="gyroscope" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="GyroEntity" syncable="YES"/>
+        <relationship name="locale" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="LocationEntity" syncable="YES"/>
+        <relationship name="magnetometer" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="MagEntity" syncable="YES"/>
+    </entity>
+    <entity name="GyroEntity" representedClassName=".GyroEntity" syncable="YES">
+        <attribute name="timeList" optional="YES" attributeType="Transformable" customClassName="[Double]" syncable="YES"/>
+        <attribute name="x" optional="YES" attributeType="Transformable" customClassName="[Double]" syncable="YES"/>
+        <attribute name="y" optional="YES" attributeType="Transformable" customClassName="[Double]" syncable="YES"/>
+        <attribute name="z" optional="YES" attributeType="Transformable" customClassName="[Double]" syncable="YES"/>
+        <relationship name="session" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="DriveSession" syncable="YES"/>
+    </entity>
+    <entity name="LocationEntity" representedClassName=".LocationEntity" syncable="YES">
+        <attribute name="bearing" optional="YES" attributeType="Transformable" customClassName="[Double]" syncable="YES"/>
+        <attribute name="lat" optional="YES" attributeType="Transformable" customClassName="[Double]" syncable="YES"/>
+        <attribute name="long" optional="YES" attributeType="Transformable" customClassName="[Double]" syncable="YES"/>
+        <attribute name="mph" optional="YES" attributeType="Transformable" customClassName="[Double]" syncable="YES"/>
+        <attribute name="timeList" optional="YES" attributeType="Transformable" customClassName="[Double]" syncable="YES"/>
+        <relationship name="session" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="DriveSession" syncable="YES"/>
+    </entity>
+    <entity name="MagEntity" representedClassName=".MagEntity" syncable="YES">
+        <attribute name="timeList" optional="YES" attributeType="Transformable" customClassName="[Double]" syncable="YES"/>
+        <attribute name="x" optional="YES" attributeType="Transformable" customClassName="[Double]" syncable="YES"/>
+        <attribute name="y" optional="YES" attributeType="Transformable" customClassName="[Double]" syncable="YES"/>
+        <attribute name="z" optional="YES" attributeType="Transformable" customClassName="[Double]" syncable="YES"/>
+        <relationship name="session" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="DriveSession" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="DriveSession" positionX="-38" positionY="-18" width="128" height="133"/>
+        <element name="GyroEntity" positionX="-540" positionY="108" width="128" height="118"/>
+        <element name="AccEntity" positionX="-270" positionY="144" width="128" height="120"/>
+        <element name="MagEntity" positionX="-261" positionY="153" width="128" height="120"/>
+        <element name="LocationEntity" positionX="-252" positionY="162" width="128" height="135"/>
+    </elements>
+</model>
